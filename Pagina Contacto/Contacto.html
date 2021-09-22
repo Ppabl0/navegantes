@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <head>
+        <title>Contacto</title>
+        <link rel='stylesheet' href='estilos.css'>
+    </head>
+    <body>
+        <form id="forma" class='contacto'>
+            <div><label>Tu Nombre:</label><input id="nombre" type='text' value='' required></div>
+            <div><label>Tu Email:</label><input  id="correo" type='email' value='' required></div>
+            <div><label>Telefono:</label><input id= "telefono" type='text' value='' minlength="10" maxlength="10" required></div>
+            <div><label>Asunto:</label><input type='text' value='' required></div>
+            <div><label>Mensaje:</label><textarea rows='6' required></textarea></div>
+            <div><input id="enviar" type='button' value='Envia Mensaje' onclick="validarFormulario()"></div>
+        </form>
+        <a href="mailto:omar.padillafrias@gmail.com?subject=Asunto, body=Prueba">Prueba</a>
+
+
+
+    </body>
+    <script src="form.js"></script>
+</html>
