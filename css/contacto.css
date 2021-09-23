@@ -1,0 +1,100 @@
+/*Mapa*/
+.map{
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  display: block;
+}
+/*Formulario*/
+div.formulario{
+  padding-right: 50px;
+}
+
+@media screen and (min-width: 1200px) {
+  iframe{
+  width: 600px;
+  height: 450px;
+  }
+  .contacto input[type='text'], .contacto textarea{
+    padding: 7px 6px;
+    width: 90%;
+    border: 1px solid #CED5D7;
+    resize: none;
+    box-shadow:0 0 0 3px #EEF5F7;
+    margin: 5px 0;
+  }
+  .contacto input[type='email'], .contacto textarea{
+    padding: 7px 6px;
+    width: 90%;
+    border: 1px solid #CED5D7;
+    resize: none;
+    box-shadow:0 0 0 3px #EEF5F7;
+    margin: 5px 0;
+  }
+}
+@media screen and (max-width:1199px) and (min-width:721px) {
+  iframe{
+  width: 600px;
+  height: 450px;
+  }
+  .contacto input[type='text'], .contacto textarea{
+    padding: 7px 6px;
+    width: 70%;
+    border: 1px solid #CED5D7;
+    resize: none;
+    box-shadow:0 0 0 3px #EEF5F7;
+    margin: 5px 0;
+  }
+}
+
+/*Datos*/
+h5.contacto{
+  font-weight: bold;
+}
+
+p.contacto{
+  font-weight: bold;
+}
+
+/*Form contacto*/
+form.contacto{
+  border: 1px solid #CED5D7;
+  border-radius: 6px;
+  padding: 45px 45px 20px;
+  background-color: white;
+  box-shadow: 0px 5px 10px #B5C1C5, 0 0 0 10px #EEF5F7 inset;
+}
+.contacto label{
+  display: block;
+  font-weight: bold;
+}
+.contacto div{
+  margin-bottom: 15px;
+}
+/*------------------------Página contacto----------------------------*/
+.contacto input[type='text']:focus, .contacto textarea:focus{
+  outline: none;
+  box-shadow:0 0 0 3px #dde9ec;
+}
+.contacto input[type='submit']{
+  border: 1px solid #CED5D7;
+  box-shadow:0 0 0 3px #EEF5F7;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0px white;
+
+  background: #e4f1f6;
+  background: -moz-linear-gradient(top, #e4f1f6 0%, #cfe6ef 100%);
+  background: -webkit-linear-gradient(top, #e4f1f6 0%,#cfe6ef 100%);
+}
+.contacto input[type='submit']:hover{
+  background: #edfcff;
+  background: -moz-linear-gradient(top, #edfcff 0%, #cfe6ef 100%);
+  background: -webkit-linear-gradient(top, #edfcff 0%,#cfe6ef 100%);
+}
+.contacto input[type='submit']:active{
+  background: #cfe6ef;
+  background: -moz-linear-gradient(top, #cfe6ef 0%, #edfcff 100%);
+  background: -webkit-linear-gradient(top, #cfe6ef 0%,#edfcff 100%);
+}
