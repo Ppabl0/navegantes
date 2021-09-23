@@ -116,8 +116,7 @@
                     </div>
                     <div><label>Tu Email:</label><input id="correo" type='email' vmodel="correo" value='' required>
                     </div>
-                    <div><label>Telefono:</label><input id="telefono" type='text' v-model="telefono" value=''
-                            minlength="10" maxlength="10" required></div>
+                    <div><label>Telefono:</label><input id="telefono" type='text' v-model="telefono" value='' minlength="10" maxlength="10" required></div>
                     <div><label>Mensaje:</label><textarea name="comentario" id="comentario" rows="6"
                             v-model="comentario" required></textarea></div>
                     <div><input id="enviar" type="button" onclick="if(validarFormulario() == true ){enviarDatos();}"
