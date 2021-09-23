@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <!-- bootstrap style sheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+
+<body>
+  <!-- BARRA DE NAVEGACION BOOTSTRAP -->
+	<div class="sticky-xl-top" style="position: sticky;">
+		<nav class="navbar navbar-expand-lg navbar-pink-300 bg-pink-300 sticky-top
+				" style="position: sticky; background-color: #EF0654;">
+				<div class="container-fluid">
+						<a class="navbar-brand" href="#" style="color: rgb(247, 243, 243);">Happy swimwear</a>
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+								aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+										<li class="nav-item">
+												<a class="nav-link active" aria-current="page" href="#"
+														style="color:rgb(247, 243, 243);">Inicio</a>
+										</li>
+										<li class="nav-item">
+												<a class="nav-link" href="listaProductos.html" style="color: rgb(247, 243, 243);">Trajes de baño</a>
+										</li>
+										<li class="nav-item dropdown">
+												<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+														data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(247, 243, 243);">
+														Categoria
+												</a>
+												<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+														<li><a class="dropdown-item" href="#" style="color: #EF0654 
+	;">Hombre</a></li>
+														<li><a class="dropdown-item" href="#" style="color: #EF0654 
+	;">Mujer</a></li>
+														<li>
+																<hr class="dropdown-divider">
+														</li>
+														<li><a class="dropdown-item" href="#" style="color: #EF0654 
+	;">Pareja</a></li>
+												</ul>
+										</li>
+										<li class="nav-item">
+												<a class="nav-link" href="#" style="color: rgb(247, 243, 243);">Oferta</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="Aboutus.html" style="color: rgb(247, 243, 243);">Sobre nosotros</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="Contacto.html" style="color: rgb(247, 243, 243);">Contacto</a>
+								</li>
+								</ul>
+								<form class="d-flex">
+										<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+										<button class="btn btn-outline-pink-900" type="submit">Search</button>
+								</form>
+						</div>
+				</div>
+		</nav>
+</div>
+<!-- FIN BARRA NAVEGACION -->
+
+<!-- FORMULARIO PARA AÑADIR PRODUCTOS SUPERVISOR -->
+    <div style="margin-top: 50px; margin-left: 40%;">
+      <h3>Añadir nuevo producto</h3>
+      <input type="text" placeholder="imagen"><br>
+      <button>agregar imagen</button><br>
+      <input type="text" placeholder="precio"><br>
+      <input type="text" placeholder="modelo"><br>
+      <span>Tallas</span>
+      <input type="checkbox" name="XL"><label for="XL">XL</label>
+      <input type="checkbox" name="G"><label for="G">G</label>
+      <input type="checkbox" name="M"><label for="M">M</label>
+      <input type="checkbox" name="Ch"><label for="Ch">Ch</label><br>
+      <br>
+      <button>Agreguar producto</button>
+    </div>
+<!-- FIN FORMULARIO -->
+
+<!-- TABLA DONDE SE MUESTRA PRODUCTOS -->
+    <table style="margin-top: 100px;">
+        <tr>
+          <th>Imagen</th>
+          <th>modelo</th>
+          <th>Tallas</th>
+          <th>Precios</th>
+        </tr>
+        <tr>
+          <td>foto sabrosa</td>
+          <td>2215487</td>
+          <td>XL - X</td>
+          <td>$50,000</td>
+        </tr>
+        <tr>
+          <td>foto sabrosa 2</td>
+          <td>458754</td>
+          <td>XL - X - M - S</td>
+          <td>$450</td>
+        </tr>
+        <tr>
+          <td>foto sabrosa 3</td>
+          <td>54657</td>
+          <td>M - Ch</td>
+          <td>$300</td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+      </table>
+      <p style="margin-top: 150px;"></p><br>
+<!-- FIN TABLA PRODUCTOS -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+</html>
+
