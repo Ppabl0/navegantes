@@ -252,5 +252,42 @@ h6.text-focus-in {
 }
 
 
+.contenedorIconosTarjetas .izquierda{
+  float: left;
+}
 
+.contenedorIconosTarjetas .izquierda i{
+  color: #f700cd;
+}
 
+.contenedorIconosTarjetas .derecha{
+  float: right;
+}
+
+.contenedorIconosTarjetas .derecha i{
+  color: #f700cd;
+}
+
+.contenedorIconosTarjetas button{
+  width: 130px;
+  background-color: #f700cd;
+  border: 0px;
+}
+
+#ulCards{
+  margin-top: -15px;
+}
+
+#containerCategorias .col-1{
+  margin-right: 90px !important;
+  margin-left: -30px !important;
+}
+
+#navNegro{
+  color: black !important;
+}
+
+.negroLabel{
+  color:black;
+  font-weight: bolder;
+}

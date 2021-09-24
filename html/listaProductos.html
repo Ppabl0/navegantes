@@ -12,6 +12,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Caramel&display=swap" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css2?family=Caramel&family=Fleur+De+Leah&display=swap" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link rel='stylesheet' href='/css/estilos.css'>
 	<title>Lista de productos</title>
 </head>
@@ -32,7 +33,10 @@
               <a class="nav-link active" aria-current="page" href="PaginaPrincipal.html">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="listaProductos.html">Productos</a>
+              <a class="nav-link" href="#">Productos</a>
+            </li>
+						<li class="nav-item">
+              <a class="nav-link" href="Ofertas.html">Ofertas</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="Aboutus.html">Nosotros</a>
@@ -53,17 +57,20 @@
 <!-- FIN BARRA NAVEGACION -->
 	
 	<br><br>
-	<div class="container">
+
+	<div class="container" id="containerCategorias"> 
 		<div class="row">
 			<div class="col-1">		
 					<nav class="nav flex-column">
-				<label for="Categorias">Categorias</label>
-				<a class="nav-link active" aria-current="page" href="#">Active</a>
-				<a class="nav-link" href="#">Link</a>
-				<a class="nav-link" href="#">Link</a>
-				<a class="nav-link disabled">Disabled</a>
+				<label class="negroLabel" for="Categorias">Categorias</label>
+				<a id="navNegro" class="nav-link active" aria-current="page" href="#">Active</a>
+				<a id="navNegro" class="nav-link" href="#">Link</a>
+				<a id="navNegro" class="nav-link" href="#">Link</a>
+				<a id="navNegro" class="nav-link">Disabled</a>
 			</nav>
 		</div>
+
+
 			<div class="col-10">
 				
 			<div class="row row-cols-1 row-cols-md-3 g-4">
@@ -71,89 +78,161 @@
 				<div class="col">
 					<div class="card h-100">
 						<img src="/imagenes/1.jpg" class="card-img-top" alt="..." height="250px">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<div class="card-body text-center">
+							<h5 class="card-title">Red Summer</h5>
+							<ul class="list-group list-group-flush" id="ulCards">
+								<li class="list-group-item">$455</li>
+								<li class="list-group-item">
+
+					<div class="contenedorIconosTarjetas">
+        <div class="text-center justify-content-center">
+					<a href="#" target="_blank" class="izquierda"><i class="fas fa-cart-plus fa-2x"></i></a>
+					<button type="button" class="btn btn-primary">Ver más...</button>
+					<a href="#" target="_blank" class="derecha"><i class="fas fa-heart fa-2x" ></i></a>
+					</div>
+					</div>
+
+								</li>
+							</ul>
 						</div>
-						<div class="card-footer">
-							<small class="text-muted">Last updated 3 mins ago</small>
-						</div>
+					
 					</div>
 				</div>
 				<div class="col">
 					<div class="card h-100">
 						<img src="/imagenes/1.jpg" class="card-img-top" alt="..." height="250px">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+						<div class="card-body text-center">
+							<h5 class="card-title">Fresh style</h5>
+							<ul class="list-group list-group-flush" id="ulCards">
+								<li class="list-group-item">$455</li>
+								<li class="list-group-item">
+
+					<div class="contenedorIconosTarjetas">
+        <div class="text-center justify-content-center">
+					<a href="#" target="_blank" class="izquierda"><i class="fas fa-cart-plus fa-2x"></i></a>
+					<button type="button" class="btn btn-primary">Ver más...</button>
+					<a href="#" target="_blank" class="derecha"><i class="fas fa-heart fa-2x" ></i></a>
+					</div>
+					</div>
+
+								</li>
+							</ul>
 						</div>
-						<div class="card-footer">
-							<small class="text-muted">Last updated 3 mins ago</small>
-						</div>
+			
 					</div>
 				</div>
 				<div class="col">
 					<div class="card h-100">
 						<img src="/imagenes/1.jpg" class="card-img-top" alt="..." height="250px">
-						<div class="card-body">
+						<div class="card-body text-center">
 							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+							<ul class="list-group list-group-flush" id="ulCards">
+								<li class="list-group-item">$455</li>
+								<li class="list-group-item">
+
+					<div class="contenedorIconosTarjetas">
+        <div class="text-center justify-content-center">
+					<a href="#" target="_blank" class="izquierda"><i class="fas fa-cart-plus fa-2x"></i></a>
+					<button type="button" class="btn btn-primary">Ver más...</button>
+					<a href="#" target="_blank" class="derecha"><i class="fas fa-heart fa-2x" ></i></a>
+					</div>
+					</div>
+
+								</li>
+							</ul>
 						</div>
-						<div class="card-footer">
-							<small class="text-muted">Last updated 3 mins ago</small>
-						</div>
+
 					</div>
 				</div>
 				<div class="col">
 					<div class="card h-100">
 						<img src="/imagenes/2.png" class="card-img-top" alt="..." height="250px">
-						<div class="card-body">
+						<div class="card-body text-center">
 							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+							<ul class="list-group list-group-flush" id="ulCards">
+								<li class="list-group-item">$455</li>
+								<li class="list-group-item">
+
+					<div class="contenedorIconosTarjetas">
+        <div class="text-center justify-content-center">
+					<a href="#" target="_blank" class="izquierda"><i class="fas fa-cart-plus fa-2x"></i></a>
+					<button type="button" class="btn btn-primary">Ver más...</button>
+					<a href="#" target="_blank" class="derecha"><i class="fas fa-heart fa-2x" ></i></a>
+					</div>
+					</div>
+
+								</li>
+							</ul>
 						</div>
-						<div class="card-footer">
-							<small class="text-muted">Last updated 3 mins ago</small>
-						</div>
+					
 					</div>
 				</div>
 				<div class="col">
 					<div class="card h-100">
 						<img src="/imagenes/2.png" class="card-img-top" alt="..." height="250px">
-						<div class="card-body">
+						<div class="card-body text-center">
 							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+							<ul class="list-group list-group-flush" id="ulCards">
+								<li class="list-group-item">$455</li>
+								<li class="list-group-item">
+
+					<div class="contenedorIconosTarjetas">
+        <div class="text-center justify-content-center">
+					<a href="#" target="_blank" class="izquierda"><i class="fas fa-cart-plus fa-2x"></i></a>
+					<button type="button" class="btn btn-primary">Ver más...</button>
+					<a href="#" target="_blank" class="derecha"><i class="fas fa-heart fa-2x" ></i></a>
+					</div>
+					</div>
+
+								</li>
+							</ul>
 						</div>
-						<div class="card-footer">
-							<small class="text-muted">Last updated 3 mins ago</small>
-						</div>
+				
 					</div>
 				</div>
 				<div class="col">
 					<div class="card h-100">
 						<img src="/imagenes/2.png" class="card-img-top" alt="..." height="250px">
-						<div class="card-body">
+						<div class="card-body text-center">
 							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+							<ul class="list-group list-group-flush" id="ulCards">
+								<li class="list-group-item">$455</li>
+								<li class="list-group-item">
+
+					<div class="contenedorIconosTarjetas">
+        <div class="text-center justify-content-center">
+					<a href="#" target="_blank" class="izquierda"><i class="fas fa-cart-plus fa-2x"></i></a>
+					<button type="button" class="btn btn-primary">Ver más...</button>
+					<a href="#" target="_blank" class="derecha"><i class="fas fa-heart fa-2x" ></i></a>
+					</div>
+					</div>
+
+
+								</li>
+							</ul>
 						</div>
-						<div class="card-footer">
-							<small class="text-muted">Last updated 3 mins ago</small>
-						</div>
+			
 					</div>
 				</div>
 			</div>
 
+		</div>
 
+</div>
 			</div>
 		</div>
-	</div><br/>
+	</div>
+	
+	
+	<br/>
 
 	<nav aria-label="...">
 		<ul class="pagination justify-content-center">
 			<li class="page-item disabled">
 				<span class="page-link">Previous</span>
 			</li>
-			<li class="page-item"><a class="page-link" href="#">1</a></li>
-			<li class="page-item active" aria-current="page">
+			<li class="page-item active"><a class="page-link" href="#">1</a></li>
+			<li class="page-item" aria-current="page">
 				<span class="page-link">2</span>
 			</li>
 			<li class="page-item"><a class="page-link" href="#">3</a></li>
@@ -162,6 +241,7 @@
 			</li>
 		</ul>
 	</nav>
+	
 
 
 
