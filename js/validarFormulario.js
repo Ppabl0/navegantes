@@ -27,7 +27,7 @@ function validarFormulario(){
     return;
     }
     
-    if(telefonoForm.lenght > 8 && telefonoForm.lenght < 12){
+    if(telefonoForm.lenght < 8){
         alert('Número de telefono no valido');
         return;
     }
