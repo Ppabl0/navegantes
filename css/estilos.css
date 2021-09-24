@@ -54,7 +54,7 @@
   background-color: rgb(255, 255, 255);
 }
 
-.navbar-brand {
+/*.navbar-brand {
   font-family: "Grechen Fuemen", cursive;
   font-size: 2rem;
 }
@@ -62,7 +62,7 @@
 a.nav-link {
   font-family: "Grechen Fuemen", cursive;
   font-size: 1.2rem;
-}
+}*/
 
 section.contenedor {
   align-items: center;
