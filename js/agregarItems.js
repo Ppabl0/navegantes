@@ -4,7 +4,7 @@ function addItem(item){
 	<div class = "product col-md-3" >
   <div class = "product-content">
       <div class = "product-img">
-        <img src = ${item.img} alt = "product image">
+        <img src = ${item.img} alt = "product image" height="320px" >
       </div>
       <div class = "product-btns">
         <button type = "button" class = "btn-cart"> añadir a carrito
@@ -59,6 +59,8 @@ list.push(new Item('Sea peace','/imagenes/7.jpg','392'));
 list.push(new Item('Beauty love','/imagenes/8.jpg','190'));
 list.push(new Item('Fire wave','/imagenes/9.jpg','165'));
 list.push(new Item('Flowers top','/imagenes/10.jpg','500'));
+list.push(new Item('Blue island','/imagenes/11.jpg','430'));
+list.push(new Item('Sky mood','/imagenes/12.jpg','140'));
 
 
 list = JSON.stringify(list);
