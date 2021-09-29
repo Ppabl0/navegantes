@@ -59,3 +59,12 @@ addItem({'name':'Beauty love',
 	'img':'/imagenes/10.jpg',
 	'precio':'500'});
 
+	addItem({'name':'Blue collection',
+	'img':'/imagenes/11.jpg',
+	'precio':'199'});
+
+	addItem({'name':'Blue mood',
+	'img':'/imagenes/12.jpg',
+	'precio':'460'});
+
+
