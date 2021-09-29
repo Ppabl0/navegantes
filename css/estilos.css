@@ -291,3 +291,14 @@ h6.text-focus-in {
   color:black;
   font-weight: bolder;
 }
+
+/* ---------------------------------------------- Estilos para los botones del login */
+.abs-center {
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.form {
+  width: 450px;
+}
