@@ -1,70 +1,87 @@
 function addItem(item){
-	const itemHTML = '<div class="col"> <div class="card h-100">' +
-			' <img src="'+item.img+'" class="card-img-top" height="250px" alt="image" >' +
-			'    <div class="card-body text-center">' +
-			'        <h5 class="card-title">'+item.name+'</h5>' +
-			'        	<ul class="list-group list-group-flush" id="ulCards">' + 
-			'<li class="list-group-item">'+item.precio+'</li>'+
-			'<li class="list-group-item">'+
-			'<div class="contenedorIconosTarjetas">'+
-		'<div class="text-center justify-content-center">'+
-			'<a href="#" target="_blank" class="izquierda"><i class="fas fa-cart-plus fa-2x"></i></a>'+
-			'<button type="button" class="btn btn-primary">Ver más...</button>'+
-			'<a href="#" target="_blank" class="derecha"><i class="fas fa-heart fa-2x" ></i></a>'+
-			'</div></div>'+
-			'</li></ul>'+
-			'    </div>' +
-			'</div></div></div>';
+	
+	const itemHTML = `
+	<div class = "product col-md-3" >
+  <div class = "product-content">
+      <div class = "product-img">
+        <img src = ${item.img} alt = "product image">
+      </div>
+      <div class = "product-btns">
+        <button type = "button" class = "btn-cart"> añadir a carrito
+        <span><i class = "fas fa-plus"></i></span>
+        </button>
+        <button type = "button" class = "btn-buy"> comprar ahora
+        <span><i class = "fas fa-shopping-cart"></i></span>
+        </button>
+      </div>
+  </div>
+
+  <div class = "product-info">
+    <div class = "product-info-top">
+      <h2 class = "sm-title">Verano</h2>
+      <div class = "rating">
+        <span><i class = "fas fa-star"></i></span>
+        <span><i class = "fas fa-star"></i></span>
+        <span><i class = "fas fa-star"></i></span>
+        <span><i class = "fas fa-star"></i></span>
+        <span><i class = "far fa-star"></i></span>
+    	</div>
+    </div>
+    <a href = "#" class = "product-name">${item.name}</a>
+    <p class = "product-price">$${item.price}</p>
+  </div>
+	</div>`;
 	const itemsContainer = document.getElementById("listaBikinis");
 	itemsContainer.innerHTML += itemHTML;
+
+
 }
 
-addItem({'name':'Red Summer',
-	'img':'/imagenes/1.jpg',
-	'precio':'390'});
 
-addItem({'name':'Fresh Style',
-	'img':'/imagenes/2.png',
-	'precio':'200'});
+function GuardarItemsLocalStorage(){
+	class Item {
+		constructor (name,img,price){
+						this.name = name;
+						this.img = img;
+						this.price = price;
+		}
+}
 
-	addItem({'name':'Top Wave',
-	'img':'/imagenes/3.jpg',
-	'precio':'190'});
+let list = [];
 
-	addItem({'name':'Twisted Summer',
-	'img':'/imagenes/4.jpg',
-	'precio':'175'});
-
-addItem({'name':'Water Sun',
-	'img':'/imagenes/5.jpg',
-	'precio':'350.50'});
-
-	addItem({'name':'Wave light',
-	'img':'/imagenes/6.jpg',
-	'precio':'500'});
-
-	addItem({'name':'Sea peace',
-	'img':'/imagenes/7.jpg',
-	'precio':'392'});
-
-addItem({'name':'Beauty love',
-	'img':'/imagenes/8.jpg',
-	'precio':'190'});
-
-	addItem({'name':'Fire wave',
-	'img':'/imagenes/9.jpg',
-	'precio':'165'});
-
-	addItem({'name':'Flowers top',
-	'img':'/imagenes/10.jpg',
-	'precio':'500'});
-
-	addItem({'name':'Blue collection',
-	'img':'/imagenes/11.jpg',
-	'precio':'199'});
-
-	addItem({'name':'Blue mood',
-	'img':'/imagenes/12.jpg',
-	'precio':'460'});
+list.push(new Item('Red Summer','/imagenes/1.jpg','390'));
+list.push(new Item('Fresh Style','/imagenes/2.png','200'));
+list.push(new Item('Top Wave','/imagenes/3.jpg','190'));
+list.push(new Item('Twisted Summer','/imagenes/4.jpg','175'));
+list.push(new Item('Water Sun','/imagenes/5.jpg','350.50'));
+list.push(new Item('Wave light','/imagenes/6.jpg','500'));
+list.push(new Item('Sea peace','/imagenes/7.jpg','392'));
+list.push(new Item('Beauty love','/imagenes/8.jpg','190'));
+list.push(new Item('Fire wave','/imagenes/9.jpg','165'));
+list.push(new Item('Flowers top','/imagenes/10.jpg','500'));
 
 
+list = JSON.stringify(list);
+
+localStorage.setItem("Productos",list);
+}
+
+
+function CargarItems(){
+
+	if(localStorage.getItem("Productos") == null){
+    localStorage.setItem("Productos",'[lista]')
+  }
+
+  let list  = JSON.parse(localStorage.getItem("Productos"));
+	console.log(list.length)
+	for(let i = 0; i < list.length ; i++){
+		console.log(list[i].name);
+		addItem(list[i]);
+	}
+
+}
+
+
+GuardarItemsLocalStorage();
+CargarItems();
