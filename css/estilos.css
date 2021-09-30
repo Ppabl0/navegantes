@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
+body{
+  background-image: url(/imagenes/fondo2.png);
 
+}
 .nosotros {
   background: url("");
 }
@@ -302,3 +305,10 @@ h6.text-focus-in {
 .form {
   width: 450px;
 }
+
+.moverAgradecer{
+  margin-left: 55px;
+  font-weight: bolder;
+}
+
+

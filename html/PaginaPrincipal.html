@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/estilos.css">
-    <link rel="stylesheet" href="/css/paginaprincipal.css">
+    <!-- <link rel="stylesheet" href="/css/paginaprincipal.css"> -->
     
     
        <!-- Responsivo -->
@@ -39,7 +39,7 @@
   <body>
    
 <!-- NavBar -->
-<div class="sticky-xl-top" style="position: sticky;"></div>
+<header class="sticky-top">
 <div class="header">
 		<div class="menu-bar">
 			<nav class="navbar navbar-expand-lg navbar-light " style="padding-top: 0px; padding-bottom: 0px;">
@@ -76,13 +76,59 @@
 		</div>
 	</div>
  </div>
+ </header>
   
   
 <br/>
 <h4><center> ¡Bienvenido a Happy Swimwear! Estamos listos para que comiences a disfrutar de nuestros diseños e innovadores productos que puedas imaginar. Estaremos atentos a lo que necesites.</center> </h4>
 </br>
+
+
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="/imagenes/horizontal1.jpg" class="d-block w-100" alt="..." height="500px">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="/imagenes/horizontal2.jpg" class="d-block w-100" alt="..." height="500px">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/imagenes/slider3.jpg" class="d-block w-100" alt="..." height="500px">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
+
 <!-- Tarjetas de Imagen -->
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<!-- <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
     <div class="card h-100">
       <img src="/imagenes/bikini2.jpg" width="250" height="550"  class="card-img-top" alt="...">
@@ -91,7 +137,7 @@
       </div>
       <div class="card-footer">
         <!-- <small class="text-muted">Last updated 3 mins ago</small> -->
-      </div>
+      <!-- </div>
     </div>
   </div>
   <div class="col">
@@ -102,7 +148,7 @@
       </div>
       <div class="card-footer">
         <!-- <small class="text-muted">Last updated 3 mins ago</small> -->
-      </div>
+      <!-- </div>
     </div>
   </div>
   <div class="col">
@@ -113,39 +159,19 @@
       </div>
       <div class="card-footer">
         <!-- <small class="text-muted">Last updated 3 mins ago</small> -->
-      </div>
+      <!-- </div>
     </div>
   </div>
-</div></br>
-<!-- Columnas -->
-<style>
+</div></br>  --> 
+
+<!-- <style>
       .container {
         display: flex;
       }
     </style>
-    <!-- <div class="container">
-        <div id="columna1">
-            
-            <ul>
-               <center><h3><li>Envios</li>
-                
-                <li>Contacto</li>
-                <li>Nosotros</li></center></h3>
-            </ul>
-        </div>
-          <div id="columna2">
-           
-            <ul>
-                <center><h3><li>Tabla de Medidas</li>
-                <li>Avisos de Privacidad</li>
-                <li>Tiendas</li></center></h3>
-            </ul>
-        </div>
-    </div>
-</style>
-</div></br> -->
+  
 <!-- Botones Redes Sociales -->
-<div class="container">
+<!-- <div class="container">
 <div id="buttons">
   <div class="facebook button">
     <i class="icon">
@@ -155,9 +181,9 @@
     <p>
       Facebook
     </p>
-  </div>
+  </div> --> 
 
-  <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fenablingwp%2F&width=62&layout=button&action=like&size=large&show_faces=false&share=false&height=65&appId" width="62" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+  <!-- <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fenablingwp%2F&width=62&layout=button&action=like&size=large&show_faces=false&share=false&height=65&appId" width="62" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
   </div>
   
   
@@ -170,10 +196,10 @@
       Pinterest
     </p>
   </div>
-  <iframe src="https://www.pinterest.com.mx/" width="62" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+  <iframe src="https://www.pinterest.com.mx/" width="62" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe> -->
   
   <!-- Place this tag after the last +1 button tag. -->
-  /*<script type="text/javascript">
+  <!-- <script type="text/javascript">
   (function() {
     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
     po.src = 'https://apis.google.com/js/platform.js';
@@ -193,16 +219,16 @@
   <iframe src="https://www.instagram.com/iniciarsesion2020/?hl=es" width="62" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 <script>
   function onYtEvent(payload) {
-    if (payload.eventType == 'subscribe') {
-      // Add code to handle subscribe event.
+    if (payload.eventType == 'subscribe') { -->
+      <!-- // Add code to handle subscribe event.
     } else if (payload.eventType == 'unsubscribe') {
       // Add code to handle unsubscribe event.
     }
     if (window.console) { // for debugging only
       window.console.log('YT event: ', payload);
     }
-  }
-</script>
+  } -->
+<!-- </script>
 
 </div>
 <div class="twitter button">
@@ -225,7 +251,7 @@
         js.id=id;
         js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
   </script>
-  </div>
+  </div> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<div class="sticky-xl-top" style="position: sticky;"></div>
+    <header class="sticky-top">
 <div class="header">
 		<div class="menu-bar">
 			<nav class="navbar navbar-expand-lg navbar-light " style="padding-top: 0px; padding-bottom: 0px;">
@@ -58,11 +58,11 @@
 		</div>
 	</div>
  </div>
- 
+ </header>
     
 <br/><br/><br/>
 	
-	<p> ¡Agradecemos tu visita! Por favor llena el formulario para contactarnos. ¡Con gusto te atenderemos! </p>
+	<p class="moverAgradecer"> ¡Agradecemos tu visita! Por favor llena el formulario para contactarnos. ¡Con gusto te atenderemos! </p>
 
     <main>
         <div class="row" style="padding: 5px; margin: 5px;">
@@ -103,13 +103,13 @@
             <!--Formulario-->
             <div class="formulario col-lg-5 col-md-12 col-12">
                 <form id="forma" class='contacto'>
-                    <div><label>Tu Nombre:</label><input id="nombre" type='text' vmodel="nombre" value='' required>
+                    <div><label>Tu Nombre:</label><input id="nombre" type='text' vmodel="nombre" value='' placeholder="Ejemplo: Hugo Lopez Chávez" required>
                     </div>
-                    <div><label>Tu Email:</label><input id="correo" type='email' vmodel="correo" value='' required>
+                    <div><label>Tu Email:</label><input id="correo" type='email' vmodel="correo" value='' placeholder="Ejemplo: alberto54@gmail.com" required>
                     </div>
-                    <div><label>Telefono:</label><input id="telefono" type='text' v-model="telefono" value='' minlength="10" maxlength="10" required></div>
+                    <div><label>Telefono:</label><input id="telefono" type='text' v-model="telefono" value='' minlength="10" maxlength="10" placeholder="3331310863" required></div>
                     <div><label>Mensaje:</label><textarea name="comentario" id="comentario" rows="6"
-                            v-model="comentario" required></textarea></div>
+                            v-model="comentario" placeholder="Ejemplo: Los productos que ofrecen han sido de mi agrado sin embargo quisiera que existieran más modelos y tallas" required></textarea></div>
                     <div><input id="enviar" type="button" onclick="if(validarFormulario() == true ){enviarDatos();}"
                             value='Envia Mensaje'></div>
                 </form>
