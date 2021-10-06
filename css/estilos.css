@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 body{
-  background-image: url(/imagenes/fondo2.png);
+  background-image: url(/imagenes/fondo5.png);
 
 }
 .nosotros {
@@ -284,6 +284,11 @@ h6.text-focus-in {
 #containerCategorias .col-1{
   margin-right: 90px !important;
   margin-left: -30px !important;
+}
+
+#containerCategorias .col-lg-2{
+  margin-right: 0px !important;
+  margin-left: 0px !important;
 }
 
 #navNegro{

@@ -1,10 +1,10 @@
 function addItem(item){
 	
 	const itemHTML = `
-	<div class = "product col-md-3" >
+	<div class = "product col-10 col-sm-4 col-md-3.5 col-lg-3" >
   <div class = "product-content">
       <div class = "product-img">
-        <img src = ${item.img} alt = "product image" height="320px" >
+        <img src = ${item.img} alt = "product image" height="250px" >
       </div>
       <div class = "product-btns">
         <button type = "button" class = "btn-cart"> añadir a carrito
@@ -49,15 +49,15 @@ function GuardarItemsLocalStorage(){
 
 let list = [];
 
-list.push(new Item('Red Summer','/imagenes/1.jpg','390'));
-list.push(new Item('Fresh Style','/imagenes/2.png','200'));
-list.push(new Item('Top Wave','/imagenes/3.jpg','190'));
-list.push(new Item('Twisted Summer','/imagenes/4.jpg','175'));
-list.push(new Item('Water Sun','/imagenes/5.jpg','350.50'));
-list.push(new Item('Wave light','/imagenes/6.jpg','500'));
-list.push(new Item('Sea peace','/imagenes/7.jpg','392'));
-list.push(new Item('Beauty love','/imagenes/8.jpg','190'));
-list.push(new Item('Fire wave','/imagenes/9.jpg','165'));
+list.push(new Item('Red Summer','/imagenes/UNAPIEZA2.jpg','390'));
+list.push(new Item('Fresh Style','/imagenes/CURVY1.jpg','200'));
+list.push(new Item('Top Wave','/imagenes/DOSPIEZAS1.jpg','190'));
+list.push(new Item('Twisted Summer','/imagenes/UNAPIEZA3.jpg','175'));
+list.push(new Item('Water Sun','/imagenes/CURVY2.jpg','350.50'));
+list.push(new Item('Wave light','/imagenes/DOSPIEZAS2.jpg','500'));
+list.push(new Item('Sea peace','/imagenes/CURVY3.jpg','392'));
+list.push(new Item('Beauty love','/imagenes/DOSPIEZAS3.jpg','190'));
+list.push(new Item('Fire wave','/imagenes/UNAPIEZA4.jpg','165'));
 list.push(new Item('Flowers top','/imagenes/10.jpg','500'));
 list.push(new Item('Blue island','/imagenes/11.jpg','430'));
 list.push(new Item('Sky mood','/imagenes/12.jpg','140'));
