@@ -2,7 +2,6 @@
 
 body{
   background-image: url(/imagenes/FONDO4.jpg);
-
 }
 .nosotros {
   background: url("");
@@ -397,7 +396,12 @@ h6.text-focus-in {
   margin-left: -30px !important;
 }
 
-#navNegro{
+#containerCategorias .col-lg-2{
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}
+
+.navNegro{
   color: black !important;
 }
 

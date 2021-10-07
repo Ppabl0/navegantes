@@ -59,177 +59,83 @@
 	
 	<br><br>
 
-	<div class="container" id="containerCategorias"> 
-		<div class="row" id="expandir">
-			<div class="col-1">		
-					<nav class="nav flex-column">
-				<label class="negroLabel" for="Categorias">Categorias</label>
-				<a id="navNegro" class="nav-link" href="#">Bikini tipo cabestro</a>
-				<a id="navNegro" class="nav-link" href="#">Bikini de triángulo</a>
-				<a id="navNegro" class="nav-link" href="#">Bikini tipo mini</a>
-				<a id="navNegro" class="nav-link" href="#">Bikini tipo vestido</a>
-				<a id="navNegro" class="nav-link" href="#">Bikini brasileño</a>
-				<a id="navNegro" class="nav-link" href="#">Bikini tipo bandeau</a>
-				<a id="navNegro" class="nav-link" href="#">Bikini tipo halter</a>
-			</nav>
+	<div class="row d-flex d-lg-none o-container-shadow ps-2">
+		<div class="col-md-4 col-5">
+			<select class="form-select" aria-label="Default select example">
+
+			<option selected href="#" onclick="CargarItems()">Todas las categorias</option>
+
+			<option href="#Dama_una_pieza" onclick="CargarItemsByCategory('Dama una pieza')">Dama una pieza</option>
+			
+			<option href="#Dama_dos_piezas" onclick="CargarItemsByCategory('Dama dos piezas')">Dama dos piezas</option>
+
+			<option href="#Dama_trikini" onclick="CargarItemsByCategory('Dama trikini')">Dama trikini</option>
+
+			<option href="#Dama_curvy" onclick="CargarItemsByCategory('Dama curvy')">Dama curvy</option>
+
+			<option href="#Caballero" onclick="CargarItemsByCategory('Caballero')">Caballero</option>
+
+			<option href="#Caballero_curvy" onclick="CargarItemsByCategory('Caballero curvy')">Caballero curvy</option>
+
+
+
+
+			</select>
 		</div>
+		<div class="col-md-8"></div>
+	</div>	
+	<div class="row">
+
+		<aside class="col-lg-2">
+			<div class="d-none d-lg-block">
+				<nav class="nav flex-column category">
+					<label class="negroLabel category" for="Categorias">Categorias</label>
+
+					<a id="#Todas_categorias" class="nav-link navNegro" href="#" onclick="CargarItems()">Todas las categorias</a>
+
+					<a id="#Dama_una_pieza" class="nav-link navNegro" href="#Dama_una_pieza" onclick="CargarItemsByCategory('Dama una pieza')">Dama una pieza</a>
+
+					<a id="#Dama_dos_piezas" class="nav-link navNegro" href="#Dama_dos_piezas" onclick="CargarItemsByCategory('Dama dos piezas')">Dama dos piezas</a>
+
+					<a id="#Dama_trikini" class="nav-link navNegro" href="#Dama_trikini" onclick="CargarItemsByCategory('Dama trikini')">Dama trikini</a>
 
 
-			<div class="col-10">
-				
-			<div class="row row-cols-1 row-cols-md-3 g-4" id="listaBikinis">
-				
-				<!-- <div class="col">
-					<div class="card h-100">
-						<img src="/imagenes/1.jpg" class="card-img-top" alt="..." height="250px">
-						<div class="card-body text-center">
-							<h5 class="card-title">Red Summer</h5>
-							<ul class="list-group list-group-flush" id="ulCards">
-								<li class="list-group-item">$455</li>
-								<li class="list-group-item">
+					<a id="#Dama_curvy" class="nav-link navNegro" href="#Dama_curvy" onclick="CargarItemsByCategory('Dama curvy')">Dama curvy</a>
 
-					<div class="contenedorIconosTarjetas">
-        <div class="text-center justify-content-center">
-					<a href="#" target="_blank" class="izquierda"><i class="fas fa-cart-plus fa-2x"></i></a>
-					<button type="button" class="btn btn-primary">Ver más...</button>
-					<a href="#" target="_blank" class="derecha"><i class="fas fa-heart fa-2x" ></i></a>
-					</div>
-					</div>
+					<a id="#Caballero" class="nav-link navNegro" href="#Caballero" onclick="CargarItemsByCategory('Caballero')">Caballero </a>
 
-								</li>
-							</ul>
-						</div>
-					
+					<a id="#Caballero_curvy" class="nav-link navNegro" href="#Caballero_curvy" onclick="CargarItemsByCategory('Caballero curvy')">Caballero curvy</a>
+				</nav>
+			</div>
+		</aside>
+
+		<main class="col-lg-10">
+			<div class="row">
+				<div class="col-12">
+					<div class="row g-4" id="listaBikinis">
+
 					</div>
 				</div>
-				<div class="col">
-					<div class="card h-100">
-						<img src="/imagenes/1.jpg" class="card-img-top" alt="..." height="250px">
-						<div class="card-body text-center">
-							<h5 class="card-title">Fresh style</h5>
-							<ul class="list-group list-group-flush" id="ulCards">
-								<li class="list-group-item">$455</li>
-								<li class="list-group-item">
+			</div>
+		</main>
 
-					<div class="contenedorIconosTarjetas">
-        <div class="text-center justify-content-center">
-					<a href="#" target="_blank" class="izquierda"><i class="fas fa-cart-plus fa-2x"></i></a>
-					<button type="button" class="btn btn-primary">Ver más...</button>
-					<a href="#" target="_blank" class="derecha"><i class="fas fa-heart fa-2x" ></i></a>
-					</div>
-					</div>
+	</div>
 
-								</li>
-							</ul>
-						</div>
+				
+
+
+
+
+				
 			
-					</div>
-				</div>
-				<div class="col">
-					<div class="card h-100">
-						<img src="/imagenes/1.jpg" class="card-img-top" alt="..." height="250px">
-						<div class="card-body text-center">
-							<h5 class="card-title">Card title</h5>
-							<ul class="list-group list-group-flush" id="ulCards">
-								<li class="list-group-item">$455</li>
-								<li class="list-group-item">
-
-					<div class="contenedorIconosTarjetas">
-        <div class="text-center justify-content-center">
-					<a href="#" target="_blank" class="izquierda"><i class="fas fa-cart-plus fa-2x"></i></a>
-					<button type="button" class="btn btn-primary">Ver más...</button>
-					<a href="#" target="_blank" class="derecha"><i class="fas fa-heart fa-2x" ></i></a>
-					</div>
-					</div>
-
-								</li>
-							</ul>
-						</div>
-
-					</div>
-				</div>
-				<div class="col">
-					<div class="card h-100">
-						<img src="/imagenes/2.png" class="card-img-top" alt="..." height="250px">
-						<div class="card-body text-center">
-							<h5 class="card-title">Card title</h5>
-							<ul class="list-group list-group-flush" id="ulCards">
-								<li class="list-group-item">$455</li>
-								<li class="list-group-item">
-
-					<div class="contenedorIconosTarjetas">
-        <div class="text-center justify-content-center">
-					<a href="#" target="_blank" class="izquierda"><i class="fas fa-cart-plus fa-2x"></i></a>
-					<button type="button" class="btn btn-primary">Ver más...</button>
-					<a href="#" target="_blank" class="derecha"><i class="fas fa-heart fa-2x" ></i></a>
-					</div>
-					</div>
-
-								</li>
-							</ul>
-						</div>
-					
-					</div>
-				</div>
-				<div class="col">
-					<div class="card h-100">
-						<img src="/imagenes/2.png" class="card-img-top" alt="..." height="250px">
-						<div class="card-body text-center">
-							<h5 class="card-title">Card title</h5>
-							<ul class="list-group list-group-flush" id="ulCards">
-								<li class="list-group-item">$455</li>
-								<li class="list-group-item">
-
-					<div class="contenedorIconosTarjetas">
-        <div class="text-center justify-content-center">
-					<a href="#" target="_blank" class="izquierda"><i class="fas fa-cart-plus fa-2x"></i></a>
-					<button type="button" class="btn btn-primary">Ver más...</button>
-					<a href="#" target="_blank" class="derecha"><i class="fas fa-heart fa-2x" ></i></a>
-					</div>
-					</div>
-
-								</li>
-							</ul>
-						</div>
 				
-					</div>
-				</div>
-				<div class="col">
-					<div class="card h-100">
-						<img src="/imagenes/2.png" class="card-img-top" alt="..." height="250px">
-						<div class="card-body text-center">
-							<h5 class="card-title">Card title</h5>
-							<ul class="list-group list-group-flush" id="ulCards">
-								<li class="list-group-item">$455</li>
-								<li class="list-group-item">
 
-					<div class="contenedorIconosTarjetas">
-        <div class="text-center justify-content-center">
-					<a href="#" target="_blank" class="izquierda"><i class="fas fa-cart-plus fa-2x"></i></a>
-					<button type="button" class="btn btn-primary">Ver más...</button>
-					<a href="#" target="_blank" class="derecha"><i class="fas fa-heart fa-2x" ></i></a>
-					</div>
-					</div>
-
-
-								</li>
-							</ul>
-						</div>
-			
-					</div>
-				</div> -->
 
 	<!-- ----------------------------FIN DE LOS BIKINIS -->
-			</div>
 
 		</div>
 
-		</div>
 
-</div>
-			</div>
-		</div>
-	</div>
 
 	<br/>
 
@@ -262,6 +168,7 @@
 	crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 	<script src="/js/agregarItems.js"></script>
+	<script src="/js/cargarItems.js"></script>
 
 </body>
 </html>
