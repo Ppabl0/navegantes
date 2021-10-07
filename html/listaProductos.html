@@ -62,10 +62,24 @@
 	<div class="row d-flex d-lg-none o-container-shadow ps-2">
 		<div class="col-md-4 col-5">
 			<select class="form-select" aria-label="Default select example">
-			<option selected>Categorias</option>
-			<option value="1">One</option>
-			<option value="2">Two</option>
-			<option value="3">Three</option>
+
+			<option selected href="#" onclick="CargarItems()">Todas las categorias</option>
+
+			<option href="#Dama_una_pieza" onclick="CargarItemsByCategory('Dama una pieza')">Dama una pieza</option>
+			
+			<option href="#Dama_dos_piezas" onclick="CargarItemsByCategory('Dama dos piezas')">Dama dos piezas</option>
+
+			<option href="#Dama_trikini" onclick="CargarItemsByCategory('Dama trikini')">Dama trikini</option>
+
+			<option href="#Dama_curvy" onclick="CargarItemsByCategory('Dama curvy')">Dama curvy</option>
+
+			<option href="#Caballero" onclick="CargarItemsByCategory('Caballero')">Caballero</option>
+
+			<option href="#Caballero_curvy" onclick="CargarItemsByCategory('Caballero curvy')">Caballero curvy</option>
+
+
+
+
 			</select>
 		</div>
 		<div class="col-md-8"></div>
@@ -76,12 +90,21 @@
 			<div class="d-none d-lg-block">
 				<nav class="nav flex-column category">
 					<label class="negroLabel category" for="Categorias">Categorias</label>
-					<a id="navNegro" class="nav-link" href="#">Dama una pieza</a>
-					<a id="navNegro" class="nav-link" href="#">Dama dos piezas</a>
-					<a id="navNegro" class="nav-link" href="#">Dama trikini</a>
-					<a id="navNegro" class="nav-link" href="#">Dama curvy</a>
-					<a id="navNegro" class="nav-link" href="#">Caballero </a>
-					<a id="navNegro" class="nav-link" href="#">Caballero curvy</a>
+
+					<a id="#Todas_categorias" class="nav-link navNegro" href="#" onclick="CargarItems()">Todas las categorias</a>
+
+					<a id="#Dama_una_pieza" class="nav-link navNegro" href="#Dama_una_pieza" onclick="CargarItemsByCategory('Dama una pieza')">Dama una pieza</a>
+
+					<a id="#Dama_dos_piezas" class="nav-link navNegro" href="#Dama_dos_piezas" onclick="CargarItemsByCategory('Dama dos piezas')">Dama dos piezas</a>
+
+					<a id="#Dama_trikini" class="nav-link navNegro" href="#Dama_trikini" onclick="CargarItemsByCategory('Dama trikini')">Dama trikini</a>
+
+
+					<a id="#Dama_curvy" class="nav-link navNegro" href="#Dama_curvy" onclick="CargarItemsByCategory('Dama curvy')">Dama curvy</a>
+
+					<a id="#Caballero" class="nav-link navNegro" href="#Caballero" onclick="CargarItemsByCategory('Caballero')">Caballero </a>
+
+					<a id="#Caballero_curvy" class="nav-link navNegro" href="#Caballero_curvy" onclick="CargarItemsByCategory('Caballero curvy')">Caballero curvy</a>
 				</nav>
 			</div>
 		</aside>
@@ -145,6 +168,7 @@
 	crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 	<script src="/js/agregarItems.js"></script>
+	<script src="/js/cargarItems.js"></script>
 
 </body>
 </html>
