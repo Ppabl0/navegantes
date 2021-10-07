@@ -11,6 +11,8 @@
 </head>
 
 <body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"></script>
+
   <!-- BARRA DE NAVEGACION BOOTSTRAP -->
   <header class="sticky-top">
   <div class="sticky-xl-top" style="position: sticky;"></div>
@@ -55,20 +57,60 @@
 <!-- FIN BARRA NAVEGACION -->
 
 <!-- FORMULARIO PARA AÑADIR PRODUCTOS SUPERVISOR -->
-    <div style="margin-top: 50px; margin-left: 40%;">
-      <h3>Añadir nuevo producto</h3>
-      <input type="text" placeholder="imagen"><br>
-      <button>agregar imagen</button><br>
-      <input type="text" placeholder="precio"><br>
-      <input type="text" placeholder="modelo"><br>
-      <span>Tallas</span>
-      <input type="checkbox" name="XL"><label for="XL">XL</label>
-      <input type="checkbox" name="G"><label for="G">G</label>
-      <input type="checkbox" name="M"><label for="M">M</label>
-      <input type="checkbox" name="Ch"><label for="Ch">Ch</label><br>
-      <br>
-      <button>Agreguar producto</button>
-    </div>
+<br>
+<script src="validarProducto.js"></script>
+<br/>
+
+
+<div class="row justify-content-md-center">
+  <div class="col-md-auto">
+<div class="container">
+  <div class="abs-center">
+    <form action="#" class="border p-3 form">
+      <div class="form-group">
+        <label for="password" class="letrasProducto">Nombre</label>
+        <input class="form-control" type="text" placeholder="Nombre del producto" aria-label="default input example">
+      </div><br/>
+      <div class="form-group">
+        <label for="password">Modelo</label>
+        <input class="form-control" type="text" placeholder="Modelo" aria-label="default input example">
+      </div><br/>
+      <div class="form-group">
+        <label for="password">Tipo</label>
+        <input class="form-control" type="text" placeholder="Modelo" aria-label="default input example">
+      </div><br/>
+      <div class="mb-3">
+        <label for="formFileSm" class="form-label">Imagen</label>
+        <input class="form-control form-control-sm" id="formFileSm" type="file">
+      </div><br/>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">Chica</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Mediana</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Grande</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Extra grande</label>
+      </div>
+    </form>
+  </div>
+</div>
+  </div>
+</div>
+<div class="row justify-content-md-center">
+  <div class="col-md-auto">
+      <br/>
+<button type="submit" class="btn " style="background-color: #f700cd; color:white;">Registro</button>
+  </div>
+  </div>
+
 <!-- FIN FORMULARIO -->
 
 <!-- TABLA DONDE SE MUESTRA PRODUCTOS -->
@@ -113,6 +155,8 @@
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
   <script src="/js/modal.js"></script>
+  <div id="liveAlertPlaceholder"></div>
+<button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
 </body>
 </html>
 
