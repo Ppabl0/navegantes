@@ -72,10 +72,10 @@
 <!-- FIN FORMULARIO -->
 
 <!-- TABLA DONDE SE MUESTRA PRODUCTOS -->
-    <table style="margin-top: 100px;">
+    <table class="tablaProductos" style="margin-top: 100px;">
         <tr>
           <th>Imagen</th>
-          <th>modelo</th>
+          <th>Modelo</th>
           <th>Tallas</th>
           <th>Precios</th>
         </tr>
@@ -103,8 +103,16 @@
       <p style="margin-top: 150px;"></p><br>
 <!-- FIN TABLA PRODUCTOS -->
 
+<!-- The Modal, ventanita popup donde se muestra la imagen-->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+  </div>
+
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  <script src="/js/modal.js"></script>
 </body>
 </html>
 
