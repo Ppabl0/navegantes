@@ -4,22 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
+    <title>Registrar producto</title>
     <!-- bootstrap style sheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/estilos.css">
+ 
+    <link rel='stylesheet' href='/css/estilos.css'>
 </head>
 
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"></script>
-
   <!-- BARRA DE NAVEGACION BOOTSTRAP -->
   <header class="sticky-top">
-  <div class="sticky-xl-top" style="position: sticky;"></div>
 <div class="header">
 		<div class="menu-bar">
 			<nav class="navbar navbar-expand-lg navbar-light " style="padding-top: 0px; padding-bottom: 0px;">
 				<div class="container-fluid">
+          
 				  <!-- <a class="navbar-brand" href="#">Happy swimwear</a> -->
                   <a class="navbar-brand" href="#" style="padding-top: 0px; padding-bottom: 0px;"><img src="/imagenes/logoA.png" style="margin-top: 0px; padding-top: 5px;" alt=""></a>
 				  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +42,7 @@
               <a class="nav-link" href="Contacto.html">Contacto </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.html">Iniciar Sesión</a>
+              <a class="nav-link" href="#">Iniciar Sesión</a>
             </li>
 					</ul>
 				  </div>
@@ -53,15 +52,13 @@
 	</div>
  </div>
  </header>
-    
 <!-- FIN BARRA NAVEGACION -->
+<!-- TEXTO DE BIENVENIDA -->
 
-<!-- FORMULARIO PARA AÑADIR PRODUCTOS SUPERVISOR -->
+
+</div>
+
 <br>
-<script src="validarProducto.js"></script>
-<br/>
-
-
 <div class="row justify-content-md-center">
   <div class="col-md-auto">
 <div class="container">
@@ -85,24 +82,26 @@
       </div><br/>
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-        <label class="form-check-label" for="inlineCheckbox1">Chica</label>
+        <label class="form-check-label" for="inlineCheckbox1">Small</label>
       </div>
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-        <label class="form-check-label" for="inlineCheckbox2">Mediana</label>
+        <label class="form-check-label" for="inlineCheckbox2">Medium</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option2">
-        <label class="form-check-label" for="inlineCheckbox2">Grande</label>
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">large</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option2">
-        <label class="form-check-label" for="inlineCheckbox2">Extra grande</label>
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Extra large</label>
       </div>
     </form>
   </div>
 </div>
-  </div>
+
+<!-- NUEVO REGISTRO -->
+
 </div>
 <div class="row justify-content-md-center">
   <div class="col-md-auto">
@@ -110,53 +109,8 @@
 <button type="submit" class="btn " style="background-color: #f700cd; color:white;">Registro</button>
   </div>
   </div>
+<!-- FIN NUEVO REGISTRO -->
 
-<!-- FIN FORMULARIO -->
 
-<!-- TABLA DONDE SE MUESTRA PRODUCTOS -->
-    <table class="tablaProductos" style="margin-top: 100px;">
-        <tr>
-          <th>Imagen</th>
-          <th>Modelo</th>
-          <th>Tallas</th>
-          <th>Precios</th>
-        </tr>
-        <tr>
-          <td>foto sabrosa</td>
-          <td>2215487</td>
-          <td>XL - X</td>
-          <td>$50,000</td>
-        </tr>
-        <tr>
-          <td>foto sabrosa 2</td>
-          <td>458754</td>
-          <td>XL - X - M - S</td>
-          <td>$450</td>
-        </tr>
-        <tr>
-          <td>foto sabrosa 3</td>
-          <td>54657</td>
-          <td>M - Ch</td>
-          <td>$300</td>
-        </tr>
-        <tr></tr>
-        <tr></tr>
-      </table>
-      <p style="margin-top: 150px;"></p><br>
-<!-- FIN TABLA PRODUCTOS -->
-
-<!-- The Modal, ventanita popup donde se muestra la imagen-->
-<div id="myModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img01">
-  <div id="caption"></div>
-  </div>
-
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-  <script src="/js/modal.js"></script>
-  <div id="liveAlertPlaceholder"></div>
-<button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
 </body>
 </html>
-

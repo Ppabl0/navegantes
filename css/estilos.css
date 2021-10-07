@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 body{
-  background-image: url(/imagenes/fondo5.png);
-
+  background-image: url(/imagenes/FONDO4.jpg);
 }
 .nosotros {
   background: url("");
@@ -79,6 +78,117 @@ p.card-text {
 h5.card-title {
   padding-bottom: 10px;
 }
+
+/* imagenes carrusel - - - - - - - - */
+.carousel { height: calc(100vh - 56px);}
+.carousel-inner,.carousel-item { height: 100%; width: 100%;}
+/* .carousel-item { background-color: #000;} */
+.carousel-item img { height: 100%; object-fit: cover; object-position: center;}
+
+/* texto carrusel - - - - - - -*/
+.carousel-inner p{
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+
+/* estilos de formulario.html estilos de la tabla y la ventana popup */
+.tablaProductos {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tablaProductos td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.tablaProductos tr:nth-child(even) {
+  background-color: #fcb7e0;
+}
+
+/* imagenes POPUP */
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  
+  /* Caption of Modal Image */
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+  
+  /* Add Animation */
+  .modal-content, #caption {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+  }
+
+
 
 /*Animaciones*/
 div:hover.shadow-drop-2-center {
@@ -316,4 +426,8 @@ h6.text-focus-in {
   font-weight: bolder;
 }
 
-
+.letrasProducto{
+  text-emphasis-color: #f700cd;
+  text-align: center;
+  text-shadow: #f700cd;
+}
