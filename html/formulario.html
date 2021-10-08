@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/estilos.css">
 </head>
 
-<body>
+<body">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"></script>
 
   <!-- BARRA DE NAVEGACION BOOTSTRAP -->
@@ -58,9 +58,12 @@
 
 <!-- FORMULARIO PARA AÑADIR PRODUCTOS SUPERVISOR -->
 <br>
-
 <br/>
-
+<div class="form-row text-center">
+<div class="alert alert-danger" role="alert" id="alert" hidden="true">
+  <button type="button" class="btn-close" data-bs-dismiss="alert2" aria-label="Close"></button>
+</div>
+</div>
 
 <div class="row justify-content-md-center">
   <div class="col-md-auto">
@@ -123,11 +126,13 @@
   </div>
   
 </div>
+
+
 <div class="row justify-content-md-center">
   <div class="col-md-auto">
       <br/>
-      <button type="submit" class="btn " style="background-color: #f700cd; color:white;" onclick="var checkChica = document.getElementById('tallaChica').checked; var checkMediana = document.getElementById('tallaMediana').checked; var checkGrande = document.getElementById('tallaGrande').checked;var checkExtraGrande = document.getElementById('tallaExtraGrande').checked; 
-      var retorno = validacionDeProducto(document.getElementById('nombreProducto').value,checkChica,checkMediana,checkGrande,checkExtraGrande ,document.getElementById('precio').value,document.getElementById('cantidadPiezas').value); alert(retorno);">Registar</button>
+      <button type="submit" class="btn " style="background-color: #f700cd; color:white;" onclick="document.getElementById('alert').innerHTML='';var checkChica = document.getElementById('tallaChica').checked; var checkMediana = document.getElementById('tallaMediana').checked; var checkGrande = document.getElementById('tallaGrande').checked;var checkExtraGrande = document.getElementById('tallaExtraGrande').checked; 
+      var lista = validacionDeProducto(document.getElementById('nombreProducto').value,checkChica,checkMediana,checkGrande,checkExtraGrande ,document.getElementById('precio').value,document.getElementById('cantidadPiezas').value);ejecutaAlerta(lista);">Registar</button>
   </div>
   </div>
 
@@ -172,8 +177,10 @@
   <div id="caption"></div>
   </div>
 
+<
 
   <script src="/js/validarProducto.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
   <script src="/js/modal.js"></script>
