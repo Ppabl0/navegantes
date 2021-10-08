@@ -58,7 +58,7 @@
 
 <!-- FORMULARIO PARA AÑADIR PRODUCTOS SUPERVISOR -->
 <br>
-<script src="validarProducto.js"></script>
+
 <br/>
 
 
@@ -66,48 +66,68 @@
   <div class="col-md-auto">
 <div class="container">
   <div class="abs-center">
-    <form action="#" class="border p-3 form">
+    <form action="#" class="border p-3 form" id="formularioBiki">
       <div class="form-group">
-        <label for="password" class="letrasProducto">Nombre</label>
-        <input class="form-control" type="text" placeholder="Nombre del producto" aria-label="default input example">
+        <label for="password" class="letrasProducto">Nombre</label >
+        <input class="form-control" type="text" placeholder="Nombre del producto" aria-label="default input example" id="nombreProducto" required>
       </div><br/>
       <div class="form-group">
-        <label for="password">Modelo</label>
-        <input class="form-control" type="text" placeholder="Modelo" aria-label="default input example">
-      </div><br/>
+        <input class="form-control" type="text" hidden="true" aria-label="default input example" value="VERANO" id="modeloProducto">
       <div class="form-group">
-        <label for="password">Tipo</label>
-        <input class="form-control" type="text" placeholder="Modelo" aria-label="default input example">
-      </div><br/>
+        <label for="tipo">Tipo de traje de baño</label>
+        <select class="form-select" aria-label="Default select example" id="tipo" required>
+          <option value="unaPieza">Dama una pieza</option>
+          <option value="dosPiezas">Dama dos piezas</option>
+          <option value="trikini">Dama trikini</option>
+          <option value="curvy">Dama curvy</option>
+          <option value="caballero">Caballero</option>
+          <option value="caballeroCurvy">Caballero curvy</option>
+        </select>
+      </div>
+      <br/>
       <div class="mb-3">
         <label for="formFileSm" class="form-label">Imagen</label>
-        <input class="form-control form-control-sm" id="formFileSm" type="file">
+        <input class="form-control form-control-sm" id="imagenBikini" type="file" accept=".jpg,.png,.jpeg" required>
       </div><br/>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <input class="form-check-input" type="checkbox" value="chica" id="tallaChica" >
         <label class="form-check-label" for="inlineCheckbox1">Chica</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <input class="form-check-input" type="checkbox" " value="mediana" id="tallaMediana">
         <label class="form-check-label" for="inlineCheckbox2">Mediana</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option2">
+        <input class="form-check-input" type="checkbox"  value="grande" id="tallaGrande">
         <label class="form-check-label" for="inlineCheckbox2">Grande</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option2">
+        <input class="form-check-input" type="checkbox" value="extraGrande" id="tallaExtraGrande">
         <label class="form-check-label" for="inlineCheckbox2">Extra grande</label>
       </div>
+      <br/><br/>
+      <div class="form-group">
+        <label for="precio">Precio</label>
+        <input class="form-control" type="text" placeholder="$450" aria-label="default input example" id="precio" required>
+      </div>
+      <br/>
+      <div class="form-group">
+        <label for="password">Cantidad de piezas</label>
+        <input class="form-control" type="text" placeholder="10" aria-label="default input example" id="cantidadPiezas" required>
+      </div><br/>
+  
     </form>
   </div>
 </div>
+
   </div>
+  
 </div>
 <div class="row justify-content-md-center">
   <div class="col-md-auto">
       <br/>
-<button type="submit" class="btn " style="background-color: #f700cd; color:white;">Registro</button>
+      <button type="submit" class="btn " style="background-color: #f700cd; color:white;" onclick="var checkChica = document.getElementById('tallaChica').checked; var checkMediana = document.getElementById('tallaMediana').checked; var checkGrande = document.getElementById('tallaGrande').checked;var checkExtraGrande = document.getElementById('tallaExtraGrande').checked; 
+      var retorno = validacionDeProducto(document.getElementById('nombreProducto').value,checkChica,checkMediana,checkGrande,checkExtraGrande ,document.getElementById('precio').value,document.getElementById('cantidadPiezas').value); alert(retorno);">Registar</button>
   </div>
   </div>
 
@@ -152,6 +172,8 @@
   <div id="caption"></div>
   </div>
 
+
+  <script src="/js/validarProducto.js"></script>
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
   <script src="/js/modal.js"></script>
