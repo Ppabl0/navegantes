@@ -1,3 +1,19 @@
+class Item {
+  constructor (name,img,price,category,sizeCH,sizeM,sizeG,sizeXG,pieces){
+          this.name = name;
+          this.img = img;
+          this.price = price;
+          this.category= category;
+          this.pieces=pieces;
+          this.sizeCH=sizeCH;
+          this.sizeM=sizeM;
+          this.sizeG=sizeG;
+          this.sizeXG=sizeXG;
+  }
+}
+
+
+
 function addItem(item){
 	
 	const itemHTML = `
@@ -33,21 +49,12 @@ function addItem(item){
 	</div>`;
 	const itemsContainer = document.getElementById("listaBikinis");
 	itemsContainer.innerHTML += itemHTML;
-
-
+  
 }
 
 
 function GuardarItemsLocalStorage(){
-	class Item {
-		constructor (name,img,price,category){
-						this.name = name;
-						this.img = img;
-						this.price = price;
-            this.category= category;
-		}
-}
-
+	
 let list = [];
 
 list.push(new Item('Red Summer','/imagenes/UNAPIEZA2.jpg','390','Dama una pieza'));
@@ -71,6 +78,47 @@ localStorage.setItem("Productos",list);
 }
 
 
+function agregarItemLocalStorage(validation){
+  console.log("Entro a funcion agregar item");
+  if(validation===true){
+    if(localStorage.getItem("Productos") == null){
+      localStorage.setItem("Productos",'[lista]')
+    }
+  
+    let list  = JSON.parse(localStorage.getItem("Productos"));
+    //sizeCH = document.getElementById("tallaChica");
+    // if(sizeCH.checked){
+    //   sizeCH=true;
+    // }
+
+    const $form = document.querySelector('#formularioBiki');
+    const formData = new FormData($form)
+    const imagen = document.getElementById("imagenProducto").value
+    debugger
+    let item = new Item(
+      document.getElementById("nombreProducto").value,
+      document.getElementById("imagenProducto").value,
+      document.getElementById("precioProducto").value,
+      document.getElementById("categoriaProducto").value,
+      document.getElementById("tallaChica").checked,
+      document.getElementById("tallaMediana").checked,
+      document.getElementById("tallaGrande").checked,
+      document.getElementById("tallaExtraGrande").checked,
+      document.getElementById("cantidadPiezas").value
+    )
+  
+    list.push(item);
+  
+    list = JSON.stringify(list);
+  
+    localStorage.setItem("Productos",list);
+  
+  }
+
+
+}
+
+
 function CargarItems(){
 
   const itemsContainer = document.getElementById("listaBikinis");
@@ -90,5 +138,3 @@ function CargarItems(){
 }
 
 
-GuardarItemsLocalStorage();
-CargarItems();

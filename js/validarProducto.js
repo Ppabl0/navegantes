@@ -65,14 +65,14 @@ function validacionDeProducto(
     listaErrores.push("La cantidad de piezas no es valida");
   }
 
-  let archivo = document.getElementById("imagenBikini").value;
+  let archivo = document.getElementById("imagenProducto").value;
   // Obtener extensión del archivo
   let extension = archivo.substring(archivo.lastIndexOf("."), archivo.length);
   // Si la extensión obtenida no está incluida en la lista de valores
   // del atributo "accept", mostrar un error.
   if (
     document
-      .getElementById("imagenBikini")
+      .getElementById("imagenProducto")
       .getAttribute("accept")
       .split(",")
       .indexOf(extension) < 0
