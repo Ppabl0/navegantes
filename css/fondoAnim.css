@@ -1,0 +1,94 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  /* background-color: #2f2f2f; 
+} */
+.fondoAnimado {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+.d1 { /* es el que esta mas a la izquierda*/
+  position: absolute;
+  background-image: url("/imagenes/slider3.jpg"); /*url(https://newevolutiondesigns.com/images/freebies/4k-wallpaper-3.jpg);*/
+  background-size: 2700px 1500px;
+  height: 30vh; /* es el tamaño del cuadro height para altura y width para largo*/
+  width: 15vw;
+  background-position: 0 51%; /* es la posicion de la IMAGEN*/
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+  top: 50%; /* es la posicion vertical, cuan lejos esta de la parte de arriba, tambien se puede modificar agregando left, rigth y bottom creo*/
+  transform: translateY(-50%);
+  z-index: 2; /* mientras mas alto el numero, mas al frente esta*/
+  animation: dd1 10s 1, dd12 10s 1;
+  animation-delay: 2s, 12s;
+}
+.d2 {
+  position: absolute;
+  background-image: url("/imagenes/slider3.jpg"); /*url(https://newevolutiondesigns.com/images/freebies/4k-wallpaper-3.jpg);*/
+  background-size: 2700px 1500px;
+  height: 50vh;
+  width: 25vw;
+  background-position: -10vw 50%;
+  left: 15vw;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  animation: dd2 10s 2;
+  animation-delay: 2s;
+}
+.d3 {
+  position: absolute;
+  background-image: url("/imagenes/slider3.jpg"); /*url(https://newevolutiondesigns.com/images/freebies/4k-wallpaper-3.jpg);*/
+  background-size: 2700px 1500px;
+  overflow: hidden;
+  height: 100vh;
+  width: 40vw;
+  left: 30vw;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+  background-position: -35vw 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  animation: dd3 10s 2;
+  animation-delay: 2s;
+}
+.d4 {
+  position: absolute;
+  overflow: hidden;
+  background-image: url("/imagenes/slider3.jpg"); /*url(https://newevolutiondesigns.com/images/freebies/4k-wallpaper-3.jpg);*/
+  background-size: 2700px 1500px;
+  height: 80vh;
+  width: 25vw;
+  left: 65vw;
+  background-position: -70vw 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  animation: dd4 10s 2;
+  animation-delay: 2s;
+}
+@keyframes dd1 {
+  50% {
+    width: 95vw;
+  }
+}
+@keyframes dd12 {
+  50% {
+    background-position: Calc(-40vw) 50%;
+  }
+}
+@keyframes dd2 {
+  50% {
+    background-position: Calc(-50vw) 50%;
+  }
+}
+@keyframes dd3 {
+  50% {
+    background-position: Calc(-75vw) 50%;
+  }
+}
+@keyframes dd4 {
+  50% {
+    background-position: Calc(-110vw) 50%;
+  }
+}
