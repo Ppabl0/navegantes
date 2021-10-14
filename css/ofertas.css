@@ -230,10 +230,10 @@ aside.col-lg-2{
     margin: 5px;
 }
 .product-col-r-bottom > div:first-child{
-    background: #eaa001;
+    background: #f520d8;
 }
 .product-col-r-bottom > div:last-child{
-    background: #0090ff;
+    background: #f5a0ea;
 }
 .product-col-content{
     text-align: center;
@@ -259,7 +259,7 @@ aside.col-lg-2{
     font-family: inherit;
 }
 .btn-dark:hover{
-    background: var(--carribean-green);
+    background: varca(black);
 }
 
 
