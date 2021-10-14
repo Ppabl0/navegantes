@@ -70,6 +70,10 @@ list.push(new Item('Summer sport','/imagenes/HOMBRE1.jpg','150','Caballero'));
 list.push(new Item('Fresh Beach','/imagenes/HOMBRE2.jpg','170','Caballero'));
 list.push(new Item('Blue island','/imagenes/TRIKINI1.jpg','430','Dama trikini'));
 list.push(new Item('Sky mood','/imagenes/TRIKNI2.jpg','140','Dama trikini'));
+list.push(new Item('Sunday vibes','/imagenes/CURVY4.jpg','100','Caballero curvy'));
+list.push(new Item('Sabadrink','/imagenes/CURVY5.jpg','120','Caballero curvy'));
+list.push(new Item('Hawai','/imagenes/CURVY6.jpg','160','Caballero curvy'));
+
 
 
 list = JSON.stringify(list);
