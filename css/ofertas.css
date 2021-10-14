@@ -11,9 +11,10 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
+
+/*body{
     font-family: 'Quicksand', sans-serif;
-}
+}*/
 
 .col-12{
     padding: 50px !important;
