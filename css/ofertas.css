@@ -281,7 +281,7 @@ aside.col-lg-2{
     }
     .product-col-r-bottom{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 100%);
     }
 }
 @media screen and (min-width: 1200px){
@@ -310,7 +310,7 @@ aside.col-lg-2{
         grid-template-columns: repeat(2, 1fr);
     }
     .flex{
-        height: 60vh;
+        height: 45vh;
     }
     .product-col-left{
         height: 121.5vh;
