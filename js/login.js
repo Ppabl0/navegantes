@@ -126,6 +126,7 @@ function validarInicio(){
     if(desencriptada == contra){
       alert('Inicio de sesion existoso')
       document.getElementById('inicio').reset()
+      window.location.replace("/html/PaginaPrincipal.html");
     }else {
       alert('La contraseña es incorrecta')
     }
