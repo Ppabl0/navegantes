@@ -56,24 +56,67 @@ function addItem(item){
 function GuardarItemsLocalStorage(){
 	
 let list = [];
+// Productos Dama una pieza 
+list.push(new Item('Hombro','/imagenes/UNAPIEZA2.jpg','390','Dama una pieza'));
+list.push(new Item('Lunares','/imagenes/UNAPIEZA3.jpg','175','Dama una pieza'));
+list.push(new Item('Plizado','/imagenes/UNAPIEZA4.jpg','165','Dama una pieza'));
+list.push(new Item('Flores de líneas',"'/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D1P4.jpg'",'160','Dama una pieza'));
+list.push(new Item('Flores Van G',"'/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D1P5.jpg'",'160','Dama una pieza'));
+list.push(new Item('Summer',"'/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D1P6.jpg'",'160','Dama una pieza'));
+list.push(new Item('Flor Negro',"'/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D1P7.jpg'",'160','Dama una pieza'));
+list.push(new Item('Jardín Negro',"'/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D1P8.jpg'",'160','Dama una pieza'));
 
-list.push(new Item('Red Summer','/imagenes/UNAPIEZA2.jpg','390','Dama una pieza'));
-list.push(new Item('Fresh Style','/imagenes/CURVY1.jpg','200', 'Dama curvy'));
-list.push(new Item('Top Wave','/imagenes/DOSPIEZAS1.jpg','190', 'Dama dos piezas'));
-list.push(new Item('Twisted Summer','/imagenes/UNAPIEZA3.jpg','175','Dama una pieza'));
-list.push(new Item('Water Sun','/imagenes/CURVY2.jpg','350.50', 'Dama curvy'));
-list.push(new Item('Wave light','/imagenes/DOSPIEZAS2.jpg','500', 'Dama dos piezas'));
-list.push(new Item('Sea peace','/imagenes/CURVY3.jpg','392', 'Dama curvy'));
-list.push(new Item('Beauty love','/imagenes/DOSPIEZAS3.jpg','190', 'Dama dos piezas'));
-list.push(new Item('Fire wave','/imagenes/UNAPIEZA4.jpg','165','Dama una pieza'));
+//  Productos Dama Curvy
+list.push(new Item('Lunar rojo','/imagenes/CURVY1.jpg','200', 'Dama curvy'));
+list.push(new Item('Doble flor','/imagenes/CURVY2.jpg','350.50', 'Dama curvy'));
+list.push(new Item('Stripes','/imagenes/CURVY3.jpg','392', 'Dama curvy'));
+list.push(new Item('Curvy Trikini',"'/imagenes/DAMA CURVY EXTRAS/TDC4.jpg'",'360','Dama curvy'));
+list.push(new Item('Trikini Red',"'/imagenes/DAMA CURVY EXTRAS/TDC5.jpg'",'460','Dama curvy'));
+list.push(new Item('Unaflor',"'/imagenes/DAMA CURVY EXTRAS/TDC6.jpg'",'560','Dama curvy'));
+list.push(new Item('Margaritas',"'/imagenes/DAMA CURVY EXTRAS/TDC7.jpg'",'460','Dama curvy'));
+list.push(new Item('Olanes Naranja',"'/imagenes/DAMA CURVY EXTRAS/TDC8.jpg'",'360','Dama curvy'));
+
+//  Productos Dama dos
+list.push(new Item('Trama','/imagenes/DOSPIEZAS1.jpg','190', 'Dama dos piezas'));
+list.push(new Item('Doble black','/imagenes/DOSPIEZAS2.jpg','500', 'Dama dos piezas'));
+list.push(new Item('Flores ondas','/imagenes/DOSPIEZAS3.jpg','190', 'Dama dos piezas'));
+list.push(new Item('Hojas',"'/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D2P4.jpg'",'560','Dama dos piezas'));
+list.push(new Item('Verde hoja',"'/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D2P5.jpg'",'560','Dama dos piezas'));
+list.push(new Item('Borlas',"'/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D2P6.jpg'",'460','Dama dos piezas'));
+list.push(new Item('Plizar',"'/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D2P7.jpg'",'360','Dama dos piezas'));
+list.push(new Item('Moños',"'/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D2P8.jpg'",'260','Dama dos piezas'));
+
+
+
+// Productos Caballero
 list.push(new Item('Summer sport','/imagenes/HOMBRE1.jpg','150','Caballero'));
 list.push(new Item('Fresh Beach','/imagenes/HOMBRE2.jpg','170','Caballero'));
-list.push(new Item('Blue island','/imagenes/TRIKINI1.jpg','430','Dama trikini'));
-list.push(new Item('Sky mood','/imagenes/TRIKNI2.jpg','140','Dama trikini'));
+list.push(new Item('Hoja amarillento',"'/imagenes/CABALLERO EXTRA/HR3.jpg'",'160','Caballero'));
+list.push(new Item('Suave',"'/imagenes/CABALLERO EXTRA/HR4.jpg'",'180','Caballero'));
+list.push(new Item('Casual',"'/imagenes/CABALLERO EXTRA/HR5.jpg'",'190','Caballero'));
+list.push(new Item('Tri Stripes',"'/imagenes/CABALLERO EXTRA/HR6.jpg'",'120','Caballero'));
+list.push(new Item('Cuadro',"'/imagenes/CABALLERO EXTRA/HR7.jpg'",'300','Caballero'));
+list.push(new Item('Beach',"'/imagenes/CABALLERO EXTRA/HR8.jpg'",'250','Caballero'));
+
+// Productos Trikini
+list.push(new Item('Black Flower','/imagenes/TRIKINI1.jpg','430','Dama trikini'));
+list.push(new Item('Black Print','/imagenes/TRIKNI2.jpg','140','Dama trikini'));
+list.push(new Item('BW',"'/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D3P4.jpg'",'260','Dama trikini'));
+list.push(new Item('80s',"'/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D3P5.jpg'",'460','Dama trikini'));
+list.push(new Item('GrayBlack',"'/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D3P6.jpg'",'660','Dama trikini'));
+list.push(new Item('PinkRed',"'/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D3P7.jpg'",'750','Dama trikini'));
+list.push(new Item('TriColor',"'/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D3P8.jpg'",'360','Dama trikini'));
+list.push(new Item('RedColors',"'/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D3P9.jpg'",'230','Dama trikini'));
+
+// Productos Caballero Curvy
 list.push(new Item('Sunday vibes','/imagenes/CURVY4.jpg','100','Caballero curvy'));
 list.push(new Item('Sabadrink','/imagenes/CURVY5.jpg','120','Caballero curvy'));
 list.push(new Item('Hawai','/imagenes/CURVY6.jpg','160','Caballero curvy'));
-
+list.push(new Item('Mar',"'/imagenes/CABALLERO CURVY/HC3.jpg'",'160','Caballero curvy'));
+list.push(new Item('Ocean',"'/imagenes/CABALLERO CURVY/HC4.jpg'",'160','Caballero curvy'));
+list.push(new Item('Lake',"'/imagenes/CABALLERO CURVY/HC5.jpg'",'160','Caballero curvy'));
+list.push(new Item('River',"'/imagenes/CABALLERO CURVY/HC6.jpg'",'160','Caballero curvy'));
+list.push(new Item('Cascada',"'/imagenes/CABALLERO CURVY/HC7.jpg'",'160','Caballero curvy'));
 
 
 list = JSON.stringify(list);
