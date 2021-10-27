@@ -5,23 +5,29 @@ var banderaPiezas = false;
 
 var listaErrores = [];
 
-
-function validacionDeProducto(nombre, chica, mediana, grande, extraGrande, precio, cantidadPiezas) {
+function validacionDeProducto(
+  nombre,
+  chica,
+  mediana,
+  grande,
+  extraGrande,
+  precio,
+  cantidadPiezas
+) {
   let cumpleNombre = /^[A-Za-z\s]+$/g;
   let cumplePrecio = /^[0-9.]+$/;
   let cumplePiezas = /^[0-9]+$/;
 
-
-  if(listaErrores.length > 0){
-      listaErrores = [];
-  }else{
-    document.getElementById("alert").innerHTML=" ";
-    document.getElementById("alert").hidden=false;
+  if (listaErrores.length > 0) {
+    listaErrores = [];
+  } else {
+    document.getElementById("alert").innerHTML = " ";
+    document.getElementById("alert").hidden = false;
     document.getElementById("alert").innerHTML = "Bikini registrado con exito!";
-    $('#alert').fadeIn();     
-    setTimeout(function() {
-      $('#alert').fadeOut();           
-    },4000);
+    $("#alert").fadeIn();
+    setTimeout(function () {
+      $("#alert").fadeOut();
+    }, 4000);
   }
 
   if (cumpleNombre.test(nombre)) {
@@ -30,13 +36,13 @@ function validacionDeProducto(nombre, chica, mediana, grande, extraGrande, preci
     //  alert("Por favor ingrese un nombre válido");
     listaErrores.push("Nombre del producto");
   }
-    
-  if (chica == true || mediana == true || grande == true || extraGrande == true) {
-    banderaCheck = true;
-  } else {
-    // alert("Por favor seleccione una talla");
-    listaErrores.push("No se selecciona ninguna talla");
-  }
+
+  // if (chica == 0 && mediana == true || grande == true || extraGrande == true) {
+  //   banderaCheck = true;
+  // } else {
+  //   // alert("Por favor seleccione una talla");
+  //   listaErrores.push("No se selecciona ninguna talla");
+  // }
 
   if (cumplePrecio.test(precio)) {
     banderaPrecio = true;
@@ -57,7 +63,13 @@ function validacionDeProducto(nombre, chica, mediana, grande, extraGrande, preci
   let extension = archivo.substring(archivo.lastIndexOf("."), archivo.length);
   // Si la extensión obtenida no está incluida en la lista de valores
   // del atributo "accept", mostrar un error.
-  if (document.getElementById("imagenProducto").getAttribute("accept").split(",").indexOf(extension) < 0) {
+  if (
+    document
+      .getElementById("imagenProducto")
+      .getAttribute("accept")
+      .split(",")
+      .indexOf(extension) < 0
+  ) {
     // alert("Archivo inválido. No se permite la extensión " + extension);
     listaErrores.push("La extensión de la imagen no es valida");
   }
@@ -78,121 +90,271 @@ function validacionDeProducto(nombre, chica, mediana, grande, extraGrande, preci
   // }
 }
 
-function ejecutaAlerta(lista) { 
-
-  if(lista.length > 0){
+function ejecutaAlerta(lista) {
+  if (lista.length > 0) {
     // for (let index = 0; index < lista.length; index++) {
     //   lista[index].shift();
     // }
-    document.getElementById("alert").innerHTML=" ";
-    document.getElementById("alert").hidden=false;
+    document.getElementById("alert").innerHTML = " ";
+    document.getElementById("alert").hidden = false;
     document.getElementById("alert").innerHTML = "Errores encontrados: <br/>";
     for (let index = 0; index < lista.length; index++) {
-      document.getElementById("alert").innerHTML += "<br/>" + " - " + lista[index];
+      document.getElementById("alert").innerHTML +=
+        "<br/>" + " - " + lista[index];
     }
-    $('#alert').fadeIn();     
-    setTimeout(function() {
-      $('#alert').fadeOut();           
-    },4000);
-  }  else{
-  //
+    $("#alert").fadeIn();
+    setTimeout(function () {
+      $("#alert").fadeOut();
+    }, 4000);
+  } else {
+    //
   }
-
 }
-
-
 
 // funciones para tabla de productos
 // se modifico: se creo una class producto, creo funcion anadirproducto,
-class producto{
-  constructor(){
-  this.nombre
-  this.imagenlink
-  this.precio
-  this.categoria
-  this.cantidad
-  this.tallaChica
-  this.tallaMediana
-  this.tallaGrande
-  this.tallaXgrande
+class Producto {
+  constructor() {
+    this.nombre_producto; //= nombre_producto;
+    this.precio; // = precio;
+    this.descripcion; //= descripcion;
+    this.id_categoria; //= id_categoria;
+    this.descripcion; //= descripcion;
+
+    // this.sizeCH=sizeCH;
+    // this.sizeM=sizeM;
+    // this.sizeG=sizeG;
+    // this.sizeXG=sizeXG;
+  }
+}
+
+class Tallas {
+  constructor() {
+    this.talla_ch;
+    this.talla_m;
+    this.talla_g;
+  }
+}
+
+class ImagenProducto {
+  constructor() {
+    this.imagen_producto;
   }
 }
 
 //selecionar el tag table para poderlo modificar
-let tabla = document.getElementsByClassName("tablaProductos")[0]
+let tabla = document.getElementsByClassName("tablaProductos")[0];
 
-function anadirProducto(){
+function anadirProducto() {
   //primero validar la informacion
-  let nuevoProducto = new producto
+  var id_producto;
+  var producto = new Producto();
+  let tallas = new Tallas();
+  let imagenProducto = new ImagenProducto();
 
-  //agregar la informacion del producto al objeto
-  nuevoProducto.nombre = document.getElementById('nombreProducto').value
-  nuevoProducto.imagenlink = document.getElementById("imagenProducto").value
-  nuevoProducto.precio = document.getElementById('precioProducto').value
-  nuevoProducto.categoria = document.getElementById("categoriaProducto").value
-  nuevoProducto.cantidad = document.getElementById('cantidadPiezas').value
-  nuevoProducto.tallaChica = document.getElementById('tallaChica').checked
-  nuevoProducto.tallaMediana = document.getElementById('tallaMediana').checked
-  nuevoProducto.tallaGrande = document.getElementById('tallaGrande').checked
-  nuevoProducto.tallaXgrande = document.getElementById('tallaExtraGrande').checked
+  //agregar la informacion a objetos producto,tallas e imagen
+  producto.nombre_producto = document.getElementById("nombreProducto").value;
+  imagenProducto.imagen_producto =
+    document.getElementById("imagenProducto").value;
+  producto.precio = Number(document.getElementById("precioProducto").value);
+  producto.id_categoria = Number(
+    document.getElementById("categoriaProducto").value
+  );
+  producto.descripcion = document.getElementById("descripcion").value;
+  tallas.talla_ch = Number(document.getElementById("tallaChica").value);
+  tallas.talla_m = Number(document.getElementById("tallaMediana").value);
+  tallas.talla_g = Number(document.getElementById("tallaGrande").value);
 
-  let linea = document.createElement('tr')
-  tabla.append(linea)
 
-  //crear las columnas de la linea con los datos
-  let columnaNombre = document.createElement('td')
-  let nombre = document.createTextNode(nuevoProducto.nombre)
-  columnaNombre.appendChild(nombre)
 
-  //imagen, ver despues
+//Realiza el post a la tabla de producto
+  var productoJson = JSON.stringify(producto);
+  console.log(producto); 
+  //const url = new URL("http://localhost:8080/productos/add");
+  fetch('http://localhost:8080/productos/add', {//Genera el producto en la base de datos (nombre_producto,categoria,descripcion y precio)
+    method: "POST",
+    body: productoJson,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {console.log(data)})
+    .catch((error) =>{console.error("error", error);});
 
-  let columnaPrecio = document.createElement('td')
-  let precio = document.createTextNode(nuevoProducto.precio)
-  columnaPrecio.appendChild(precio)
 
-  let columnaCategoria = document.createElement('td')
-  let categoria = document.createTextNode(nuevoProducto.categoria)
-  columnaCategoria.appendChild(categoria)
 
-  let columnaCantidad = document.createElement('td')
-  let cantidad = document.createTextNode(nuevoProducto.cantidad)
-  columnaCantidad.appendChild(cantidad)
 
-  let columnaTallas = document.createElement('td')
-  let tallas = document.createTextNode(anadirTallas(nuevoProducto))
-  columnaTallas.appendChild(tallas)
-  
-  //añadir las columnas a la linea que creamos en la tabla
-  let index = (tabla.getElementsByTagName('tr')).length
-  let ultimaLinea = tabla.getElementsByTagName('tr')[index-1]
-  ultimaLinea.append(columnaNombre) //nombre tipo tallas precio cantidad
-  ultimaLinea.append(columnaCategoria)
-  ultimaLinea.append(columnaTallas)
-  ultimaLinea.append(columnaPrecio)
-  ultimaLinea.append(columnaCantidad)
-  
-  document.getElementById('formularioBiki').reset()
-  console.log(nuevoProducto.nombre, nuevoProducto.imagenlink, nuevoProducto.precio, nuevoProducto.categoria, nuevoProducto.cantidad, nuevoProducto.tallaChica, nuevoProducto.tallaGrande, nuevoProducto.tallaMediana, nuevoProducto.tallaXgrande)
+//Realiza el post a la tabla de tallas
+  tallas.id_producto=id_producto;
+  console.log(tallas.id_producto)
+  var tallasJson = JSON.stringify(tallas)
+    //const url = new URL("http://localhost:8080/tallas/add");
+  fetch('http://localhost:8080/tallas/add', {//Genera el producto en la base de datos (nombre_producto,categoria,descripcion y precio)
+    method: "POST",
+    body: tallasJson,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error("error", error);
+    });
+
+
+
+  //document.getElementById("formularioBiki").reset();
+  // console.log(nuevoProducto.nombre, nuevoProducto.imagenlink, nuevoProducto.precio, nuevoProducto.categoria, nuevoProducto.cantidad, nuevoProducto.tallaChica, nuevoProducto.tallaGrande, nuevoProducto.tallaMediana, nuevoProducto.tallaXgrande)
+}
+
+async function eliminarProducto(id_producto) {
+  fetch(`http://localhost:8080/productos/producto/${id_producto}`, {
+    method: "DELETE",
+  })
+    .then((res) => res.json)
+    .then((res) => {
+      console.log("El producto se ha eliminado");
+    })
+    .catch((error) => {
+      console.error("error", error);
+    });
+
+    fetch(`http://localhost:8080/tallas/${id_producto}`, {
+    method: "DELETE",
+  })
+    .then((res) => res.json)
+    .then((res) => {
+      console.log("El producto se ha eliminado");
+    })
+    .catch((error) => {
+      console.error("error", error);
+    });
+
+
 
 }
 
-function anadirTallas(objetoProducto){
-  let tallas = ""
+function tablaRegistros() {
+  let tabla = document.getElementsByClassName("tablaProductos")[0]
+  
+  let products_data;
+  var producto;
+  var tallas;
+  let columnaNombre = document.createElement("td");
 
-  if(objetoProducto.tallaChica){
-    tallas += "Ch "
+
+
+  fetch('http://localhost:8080/productos/all')
+    .then((productoLista) => productoLista.json())
+    .then((productoLista) => {
+      for (let i = 0; i < productoLista.length; i++) {
+        let tabla = document.getElementsByClassName("tablaProductos")[0]
+
+        
+        
+        console.log(productoLista[i]);
+        let linea = document.createElement("tr");
+        tabla.append(linea);
+        producto = productoLista[i];
+        console.log("Registros")
+
+        let columnaID = document.createElement("td");
+        let id = document.createTextNode(producto.id_producto);
+        columnaID.appendChild(id);
+
+        let columnaNombre = document.createElement("td");
+        let nombre = document.createTextNode(producto.nombre_producto);
+        columnaNombre.appendChild(nombre);
+
+        let columnaDescripcion = document.createElement("td");
+        let descripcion = document.createTextNode(producto.descripcion);
+        columnaDescripcion.appendChild(descripcion);
+
+        let columnaPrecio = document.createElement("td");
+        let precio = document.createTextNode(producto.precio);
+        columnaPrecio.appendChild(precio);
+
+        let columnaCategoria = document.createElement("td");
+        let categoria = document.createTextNode(producto.id_categoria);
+        columnaCategoria.appendChild(categoria);
+
+        let columnaTallaCh = document.createElement("td");
+        let columnaTallaM = document.createElement("td");
+        let columnaTallaG = document.createElement("td");
+        //debugger
+        
+        fetch(`http://localhost:8080/tallas/${productoLista[i].id_producto}`)//Llamado de la tabla tallas
+        .then((tallas_fetch) => tallas_fetch.json())
+        //.then((tallas_fetch) => {debugger; console.log("Tallas",tallas_fetch.talla_ch)})
+        .then((tallas_fetch) => {
+          var talla_ch= document.createTextNode(tallas_fetch.talla_ch)
+          columnaTallaCh.appendChild(talla_ch)
+          var talla_m= document.createTextNode(tallas_fetch.talla_m)
+          columnaTallaM.appendChild(talla_m)
+          var talla_g= document.createTextNode(tallas_fetch.talla_g)
+          columnaTallaG.appendChild(talla_g)
+        })
+        .catch((error) => {console.error("error",error)})
+        
+        
+        //debugger
+
+        // let columnaCantidad = document.createElement("td");
+        // let cantidad = document.createTextNode(nuevoProducto.cantidad);
+        // columnaCantidad.appendChild(cantidad);
+
+        // let columnaTallas = document.createElement("td");
+        // let tallas = document.createTextNode(anadirTallas(nuevoProducto));
+        // columnaTallas.appendChild(tallas);
+        //addItem(data[i]);
+
+          //añadir las columnas a la linea que creamos en la tabla
+        let index = tabla.getElementsByTagName("tr").length;
+        let ultimaLinea = tabla.getElementsByTagName("tr")[index - 1];
+        ultimaLinea.append(columnaID)
+        ultimaLinea.append(columnaNombre); //nombre tipo tallas precio cantidad
+        ultimaLinea.append(columnaDescripcion);
+        ultimaLinea.append(columnaCategoria);
+        //ultimaLinea.append(columnaTallas);
+        ultimaLinea.append(columnaPrecio);
+        //debugger
+        ultimaLinea.append(columnaTallaCh);
+        ultimaLinea.append(columnaTallaM);
+        ultimaLinea.append(columnaTallaG);
+        //ultimaLinea.append(columnaCantidad);
+}
+    })
+    .then((loading = false))
+    .catch((error) => console.log(error));
+}
+  //crear las columnas de la linea con los datos
+
+  //imagen, ver despues
+
+
+
+///////////////////
+function anadirTallas(objetoProducto) {
+  let tallas = "";
+
+  if (objetoProducto.tallaChica) {
+    tallas += "Ch ";
   }
-  if(objetoProducto.tallaMediana){
-    tallas += "M "
+  if (objetoProducto.tallaMediana) {
+    tallas += "M ";
   }
-  if(objetoProducto.tallaGrande){
-    tallas += "G "
+  if (objetoProducto.tallaGrande) {
+    tallas += "G ";
   }
-  if(objetoProducto.tallaXgrande){
-    tallas += "Xg "
+  if (objetoProducto.tallaXgrande) {
+    tallas += "Xg ";
   }
 
-  return tallas
+  return tallas;
 }
 
 // console.log(document.getElementById('alert'))
