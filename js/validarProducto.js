@@ -149,7 +149,7 @@ function anadirProducto() {
   //primero validar la informacion
   var id_producto;
   var producto = new Producto();
-  let tallas = new Tallas();
+  var tallas = new Tallas();
   let imagenProducto = new ImagenProducto();
 
   //agregar la informacion a objetos producto,tallas e imagen
@@ -165,13 +165,12 @@ function anadirProducto() {
   tallas.talla_m = Number(document.getElementById("tallaMediana").value);
   tallas.talla_g = Number(document.getElementById("tallaGrande").value);
 
-
-
-//Realiza el post a la tabla de producto
+  //Realiza el post a la tabla de producto
   var productoJson = JSON.stringify(producto);
-  console.log(producto); 
+  console.log(producto);
   //const url = new URL("http://localhost:8080/productos/add");
-  fetch('http://localhost:8080/productos/add', {//Genera el producto en la base de datos (nombre_producto,categoria,descripcion y precio)
+  fetch("http://localhost:8080/productos/add", {
+    //Genera el producto en la base de datos (nombre_producto,categoria,descripcion y precio)
     method: "POST",
     body: productoJson,
     headers: {
@@ -179,40 +178,40 @@ function anadirProducto() {
     },
   })
     .then((res) => res.json())
-    .then((data) => {console.log(data)})
-    .catch((error) =>{console.error("error", error);});
-
-
-
-
-//Realiza el post a la tabla de tallas
-  tallas.id_producto=id_producto;
-  console.log(tallas.id_producto)
-  var tallasJson = JSON.stringify(tallas)
-    //const url = new URL("http://localhost:8080/tallas/add");
-  fetch('http://localhost:8080/tallas/add', {//Genera el producto en la base de datos (nombre_producto,categoria,descripcion y precio)
-    method: "POST",
-    body: tallasJson,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      tallas.id_producto = data.id_producto;
+      console.log(tallas.id_producto);
+      var tallasJson = JSON.stringify(tallas);
+      //const url = new URL("http://localhost:8080/tallas/add");
+      fetch("http://localhost:8080/tallas/add", {
+        //Genera el producto en la base de datos (nombre_producto,categoria,descripcion y precio)
+        method: "POST",
+        body: tallasJson,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((talla) => {
+          console.log("Tallas",talla);
+        })
+        .catch((error) => {
+          console.error("error", error);
+        });
     })
     .catch((error) => {
       console.error("error", error);
     });
 
-
+  //Realiza el post a la tabla de tallas
 
   //document.getElementById("formularioBiki").reset();
   // console.log(nuevoProducto.nombre, nuevoProducto.imagenlink, nuevoProducto.precio, nuevoProducto.categoria, nuevoProducto.cantidad, nuevoProducto.tallaChica, nuevoProducto.tallaGrande, nuevoProducto.tallaMediana, nuevoProducto.tallaXgrande)
 }
 
-async function eliminarProducto(id_producto) {
-  fetch(`http://localhost:8080/productos/producto/${id_producto}`, {
+function eliminarProducto(id) {
+  debugger
+  fetch(`http://localhost:8080/productos/producto/${id}`, {
     method: "DELETE",
   })
     .then((res) => res.json)
@@ -223,7 +222,7 @@ async function eliminarProducto(id_producto) {
       console.error("error", error);
     });
 
-    fetch(`http://localhost:8080/tallas/${id_producto}`, {
+  fetch(`http://localhost:8080/tallas/${id}`, {
     method: "DELETE",
   })
     .then((res) => res.json)
@@ -233,34 +232,27 @@ async function eliminarProducto(id_producto) {
     .catch((error) => {
       console.error("error", error);
     });
-
-
-
 }
 
 function tablaRegistros() {
-  let tabla = document.getElementsByClassName("tablaProductos")[0]
-  
+  let tabla = document.getElementsByClassName("tablaProductos")[0];
+
   let products_data;
   var producto;
   var tallas;
   let columnaNombre = document.createElement("td");
 
-
-
-  fetch('http://localhost:8080/productos/all')
+  fetch("http://localhost:8080/productos/all")
     .then((productoLista) => productoLista.json())
     .then((productoLista) => {
       for (let i = 0; i < productoLista.length; i++) {
-        let tabla = document.getElementsByClassName("tablaProductos")[0]
+        let tabla = document.getElementsByClassName("tablaProductos")[0];
 
-        
-        
         console.log(productoLista[i]);
         let linea = document.createElement("tr");
         tabla.append(linea);
         producto = productoLista[i];
-        console.log("Registros")
+        console.log("Registros");
 
         let columnaID = document.createElement("td");
         let id = document.createTextNode(producto.id_producto);
@@ -286,36 +278,34 @@ function tablaRegistros() {
         let columnaTallaM = document.createElement("td");
         let columnaTallaG = document.createElement("td");
         //debugger
-        
-        fetch(`http://localhost:8080/tallas/${productoLista[i].id_producto}`)//Llamado de la tabla tallas
-        .then((tallas_fetch) => tallas_fetch.json())
-        //.then((tallas_fetch) => {debugger; console.log("Tallas",tallas_fetch.talla_ch)})
-        .then((tallas_fetch) => {
-          var talla_ch= document.createTextNode(tallas_fetch.talla_ch)
-          columnaTallaCh.appendChild(talla_ch)
-          var talla_m= document.createTextNode(tallas_fetch.talla_m)
-          columnaTallaM.appendChild(talla_m)
-          var talla_g= document.createTextNode(tallas_fetch.talla_g)
-          columnaTallaG.appendChild(talla_g)
-        })
-        .catch((error) => {console.error("error",error)})
-        
-        
-        //debugger
 
-        // let columnaCantidad = document.createElement("td");
-        // let cantidad = document.createTextNode(nuevoProducto.cantidad);
-        // columnaCantidad.appendChild(cantidad);
+        fetch(`http://localhost:8080/tallas/${productoLista[i].id_producto}`) //Llamado de la tabla tallas
+          .then((tallas_fetch) => tallas_fetch.json())
+          //.then((tallas_fetch) => {debugger; console.log("Tallas",tallas_fetch.talla_ch)})
+          .then((tallas_fetch) => {
+            var talla_ch = document.createTextNode(tallas_fetch.talla_ch);
+            columnaTallaCh.appendChild(talla_ch);
+            var talla_m = document.createTextNode(tallas_fetch.talla_m);
+            columnaTallaM.appendChild(talla_m);
+            var talla_g = document.createTextNode(tallas_fetch.talla_g);
+            columnaTallaG.appendChild(talla_g);
+          })
+          .catch((error) => {
+            console.error("error", error);
+          });
 
-        // let columnaTallas = document.createElement("td");
-        // let tallas = document.createTextNode(anadirTallas(nuevoProducto));
-        // columnaTallas.appendChild(tallas);
-        //addItem(data[i]);
+        //debugger Boton eliminar producto
 
-          //añadir las columnas a la linea que creamos en la tabla
+        // let columnaEliminar = document.createElement("td");
+        // let btnEliminar = document.createElement("button");
+        // btnEliminar.value=producto.id_producto;
+        // btnEliminar.onclick(eliminarProducto(btnEliminar.value))
+        // columnaEliminar.appendChild(btnEliminar);
+
+        //añadir las columnas a la linea que creamos en la tabla
         let index = tabla.getElementsByTagName("tr").length;
         let ultimaLinea = tabla.getElementsByTagName("tr")[index - 1];
-        ultimaLinea.append(columnaID)
+        ultimaLinea.append(columnaID);
         ultimaLinea.append(columnaNombre); //nombre tipo tallas precio cantidad
         ultimaLinea.append(columnaDescripcion);
         ultimaLinea.append(columnaCategoria);
@@ -325,17 +315,16 @@ function tablaRegistros() {
         ultimaLinea.append(columnaTallaCh);
         ultimaLinea.append(columnaTallaM);
         ultimaLinea.append(columnaTallaG);
+        //ultimaLinea.append(columnaEliminar);
         //ultimaLinea.append(columnaCantidad);
-}
+      }
     })
     .then((loading = false))
     .catch((error) => console.log(error));
 }
-  //crear las columnas de la linea con los datos
+//crear las columnas de la linea con los datos
 
-  //imagen, ver despues
-
-
+//imagen, ver despues
 
 ///////////////////
 function anadirTallas(objetoProducto) {
