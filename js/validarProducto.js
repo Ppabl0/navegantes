@@ -10,13 +10,12 @@ function validacionDeProducto(
   chica,
   mediana,
   grande,
-  extraGrande,
   precio,
-  cantidadPiezas
+  descripcion
 ) {
-  let cumpleNombre = /^[A-Za-z\s]+$/g;
+  let cumpleNombre = /^[A-Za-z\s]+$/;
   let cumplePrecio = /^[0-9.]+$/;
-  let cumplePiezas = /^[0-9]+$/;
+  let cumpleDescripcion = /^[A-Za-z\s]+$/;
 
   if (listaErrores.length > 0) {
     listaErrores = [];
@@ -37,12 +36,12 @@ function validacionDeProducto(
     listaErrores.push("Nombre del producto");
   }
 
-  // if (chica == 0 && mediana == true || grande == true || extraGrande == true) {
-  //   banderaCheck = true;
-  // } else {
-  //   // alert("Por favor seleccione una talla");
-  //   listaErrores.push("No se selecciona ninguna talla");
-  // }
+  if (chica > 0 || mediana > 0 || grande > 0) {
+    banderaCheck = true;
+  } else {
+    // alert("Por favor seleccione una talla");
+    listaErrores.push("No se selecciona ninguna talla");
+  }
 
   if (cumplePrecio.test(precio)) {
     banderaPrecio = true;
@@ -51,7 +50,7 @@ function validacionDeProducto(
     listaErrores.push("El precio no es válido");
   }
 
-  if (cumplePiezas.test(cantidadPiezas)) {
+  if (cumpleDescripcion.test(descripcion)) {
     banderaPiezas = true;
   } else {
     // alert("Por favor ingrese un número de piezas válido");
