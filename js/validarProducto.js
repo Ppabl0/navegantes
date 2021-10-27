@@ -210,7 +210,7 @@ function anadirProducto() {
 }
 
 function eliminarProducto(id) {
-  debugger
+  console.log("se elimino producto")
   fetch(`http://localhost:8080/productos/producto/${id}`, {
     method: "DELETE",
   })
@@ -296,11 +296,13 @@ function tablaRegistros() {
 
         //debugger Boton eliminar producto
 
-        // let columnaEliminar = document.createElement("td");
-        // let btnEliminar = document.createElement("button");
-        // btnEliminar.value=producto.id_producto;
-        // btnEliminar.onclick(eliminarProducto(btnEliminar.value))
-        // columnaEliminar.appendChild(btnEliminar);
+        let columnaEliminar = document.createElement("td");
+        let btnEliminar = document.createElement("button");
+        btnEliminar.setAttribute("value",producto.id_producto);
+        let eliminar_p = document.createTextNode("Eliminar");
+        btnEliminar.appendChild(eliminar_p)
+        btnEliminar.setAttribute("onclick","eliminarProducto(this.value)")
+        columnaEliminar.append(btnEliminar);
 
         //añadir las columnas a la linea que creamos en la tabla
         let index = tabla.getElementsByTagName("tr").length;
@@ -315,7 +317,13 @@ function tablaRegistros() {
         ultimaLinea.append(columnaTallaCh);
         ultimaLinea.append(columnaTallaM);
         ultimaLinea.append(columnaTallaG);
-        //ultimaLinea.append(columnaEliminar);
+        // ultimaLinea.innerHTML += `
+        // <td>
+        // <button name=${producto.id_producto} value=${producto.id_producto} onclick=eliminarProducto(this.value) >
+        // Eliminar
+        // </button>
+        // </td>`
+        ultimaLinea.append(columnaEliminar);
         //ultimaLinea.append(columnaCantidad);
       }
     })
