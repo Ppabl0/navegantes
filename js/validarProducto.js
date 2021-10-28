@@ -233,6 +233,129 @@ function eliminarProducto(id) {
     });
 }
 
+
+function modificarProducto(id) {
+
+  fetch(`http://localhost:8080/productos/producto/${id}`, {
+    method: "GET",
+  })
+    //.then((res) => res.json)
+    .then((res) => res.json())
+    .then((res) => {
+      console.log("Producto con id: ",id);
+      console.log(res.id_producto);
+      document.getElementById("nombreProducto").value = res.nombre_producto;
+     
+      document.getElementById("precioProducto").value = res.precio;
+      document.getElementById("descripcion").value = res.descripcion;
+      if(res.id_categoria == 1){
+        document.getElementById("categoriaProducto").value = 1;}
+        else if(res.id_categoria == 2){
+        document.getElementById("categoriaProducto").value = 2;}
+        else if(res.id_categoria == 3){
+        document.getElementById("categoriaProducto").value = 3;}
+        else if(res.id_categoria == 4){
+        document.getElementById("categoriaProducto").value = 4;}
+        else if(res.id_categoria == 5){
+        document.getElementById("categoriaProducto").value = 5;}
+        else{      
+        document.getElementById("categoriaProducto").value = 6;}
+    })
+    .catch((error) => {
+      console.error("error", error);
+    });
+
+    fetch(`http://localhost:8080/tallas/${id}`, {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        document.getElementById("tallaChica").value = res.talla_ch;
+        document.getElementById("tallaMediana").value = res.talla_m;
+        document.getElementById("tallaGrande").value = res.talla_g;
+      })
+      .catch((error) => {
+        console.error("error", error);
+      });
+
+      document.getElementById("botonMod").hidden = false;
+      document.getElementById("botonReg").hidden = true;
+      //window.scrollBy(0, -window.innerHeight);
+      window.scrollBy(0, -3000);
+
+     
+      document.getElementById("oculto").value=id;
+
+
+}
+
+function actualizarUp(){
+  let tallas = new Tallas();
+  let imagenProducto = new ImagenProducto();
+  var id = document.getElementById("oculto").value;
+  let producto = new Producto();
+  producto.id_producto = id;
+  producto.nombre_producto = document.getElementById("nombreProducto").value;
+  imagenProducto.imagen_producto =
+    document.getElementById("imagenProducto").value;
+  producto.precio = Number(document.getElementById("precioProducto").value);
+  producto.id_categoria = Number(
+    document.getElementById("categoriaProducto").value
+  );
+  producto.descripcion = document.getElementById("descripcion").value;
+  tallas.id_producto = id;
+  tallas.talla_ch = Number(document.getElementById("tallaChica").value);
+  tallas.talla_m = Number(document.getElementById("tallaMediana").value);
+  tallas.talla_g = Number(document.getElementById("tallaGrande").value);
+
+  //Realiza el post a la tabla de producto
+  let productoJson = JSON.stringify(producto);
+  let tallasJson = JSON.stringify(tallas);
+
+ 
+
+  console.log(productoJson);
+  console.log(tallasJson);
+ 
+ 
+  
+  fetch(`http://localhost:8080/productos/update/${id}`, {
+    method: "PUT", 
+    body: productoJson,
+    //mode:"no-cors",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+  })
+    .then((res) => res.json())
+
+    .catch((error2) => {
+      console.error("error", error2);
+    });
+
+    fetch(`http://localhost:8080/tallas/update/${id}`, {
+      //Genera el producto en la base de datos (nombre_producto,categoria,descripcion y precio)
+      method: "PUT",
+      body: tallasJson,
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+    })
+      .then((res) => res.json())
+      .catch((error) => {
+        console.error("error", error);
+      });
+
+
+      alert("¡Se ha actualizado el registro con éxito!");
+      location.reload();
+}
+
+
+
+
 function tablaRegistros() {
   let tabla = document.getElementsByClassName("tablaProductos")[0];
 
@@ -261,6 +384,10 @@ function tablaRegistros() {
         let nombre = document.createTextNode(producto.nombre_producto);
         columnaNombre.appendChild(nombre);
 
+        let columnaTipo = document.createElement("td");
+        let tipo = document.createTextNode(producto.id_categoria);
+        columnaTipo.appendChild(tipo);
+
         let columnaDescripcion = document.createElement("td");
         let descripcion = document.createTextNode(producto.descripcion);
         columnaDescripcion.appendChild(descripcion);
@@ -268,6 +395,7 @@ function tablaRegistros() {
         let columnaPrecio = document.createElement("td");
         let precio = document.createTextNode(producto.precio);
         columnaPrecio.appendChild(precio);
+
 
         let columnaCategoria = document.createElement("td");
         let categoria = document.createTextNode(producto.id_categoria);
@@ -309,7 +437,7 @@ function tablaRegistros() {
         btnModificar.setAttribute("value",producto.id_producto);
         let modificar_p = document.createTextNode("Modificar");
         btnModificar.appendChild(modificar_p)
-        //btnEliminar.setAttribute("onclick","eliminarProducto(this.value)")
+        btnModificar.setAttribute("onclick","modificarProducto(this.value)")
         columnaModificar.append(btnModificar);
 
         //añadir las columnas a la linea que creamos en la tabla
@@ -325,6 +453,8 @@ function tablaRegistros() {
         ultimaLinea.append(columnaTallaCh);
         ultimaLinea.append(columnaTallaM);
         ultimaLinea.append(columnaTallaG);
+
+        ultimaLinea.append(columnaTipo);
         // ultimaLinea.innerHTML += `
         // <td>
         // <button name=${producto.id_producto} value=${producto.id_producto} onclick=eliminarProducto(this.value) >
