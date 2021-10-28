@@ -303,6 +303,15 @@ function tablaRegistros() {
         btnEliminar.setAttribute("onclick","eliminarProducto(this.value)")
         columnaEliminar.append(btnEliminar);
 
+        //debugger Boton modificar producto
+        let columnaModificar = document.createElement("td");
+        let btnModificar = document.createElement("button");
+        btnModificar.setAttribute("value",producto.id_producto);
+        let modificar_p = document.createTextNode("Modificar");
+        btnModificar.appendChild(modificar_p)
+        //btnEliminar.setAttribute("onclick","eliminarProducto(this.value)")
+        columnaModificar.append(btnModificar);
+
         //añadir las columnas a la linea que creamos en la tabla
         let index = tabla.getElementsByTagName("tr").length;
         let ultimaLinea = tabla.getElementsByTagName("tr")[index - 1];
@@ -323,6 +332,7 @@ function tablaRegistros() {
         // </button>
         // </td>`
         ultimaLinea.append(columnaEliminar);
+        ultimaLinea.append(columnaModificar);
         //ultimaLinea.append(columnaCantidad);
       }
     })
