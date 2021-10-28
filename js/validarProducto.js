@@ -36,7 +36,7 @@ function validacionDeProducto(
     listaErrores.push("Nombre del producto");
   }
 
-  if (chica > 0 || mediana > 0 || grande > 0) {
+  if ((chica>0) || (mediana > 0) || (grande > 0)) {
     banderaCheck = true;
   } else {
     // alert("Por favor seleccione una talla");
