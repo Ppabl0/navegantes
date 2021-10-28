@@ -1,10 +1,13 @@
 // creacion de clase usuario para guardar registro
-class Usuario {
-  constructor (nombre, correo, telefono, contrasena){
-    this.nombre = nombre;
-    this.correo = correo;
-    this.telefono = telefono;
-    this.contrasena= contrasena;
+class Usuario{
+  constructor(){
+      this.id_usuario;
+      this.nombre;
+      this.correo;
+      this.direccion;
+      this.telefono;
+      this.compras;
+      this.contrasena;
   }
 }
 
@@ -19,6 +22,8 @@ function anadirRegistro() {
     <div><label>Tu Nombre:</label><input id="nombre" type='text' value='' placeholder="Ejemplo: Hugo Lopez Chávez" required>
     </div>
     <div><label>Tu Email:</label><input id="correo" type='email' value='' placeholder="Ejemplo: alberto54@gmail.com" required>
+    </div>
+    <div><label>Tu Dirección:</label><input id="direccion" type='text' value='' placeholder="Independencia #55 Col. Centro" required>
     </div>
     <div><label>Telefono:</label><input id="telefono" type='text' value='' minlength="10" maxlength="10" placeholder="3331310863" required></div>
     <div><label>Contraseña (8 caracteres minimo):</label><input id="contra" type='password'  value='' minlength="8" placeholder="Al menos una mayúscula, un dígito y un símbolo." required></div>
@@ -82,7 +87,13 @@ function validarFormulario(){
   //encriptar contraseña y guardar la contraseña encriptada en los datos del usuario
   let contraEncriptada = crypt.encrypt(contrasena);
 
-  let usuarioNuevo = new Usuario(nombreForm, correoForm, telefonoForm, contraEncriptada);
+  let usuarioNuevo = new Usuario();
+  usuarioNuevo.nombre=nombreForm;
+  usuarioNuevo.correo=correoForm;
+  usuarioNuevo.telefono=telefonoForm;
+  usuarioNuevo.contrasena=contraEncriptada;
+  usuarioNuevo.compras=0;
+  usuarioNuevo.direccion=document.getElementById('direccion').value;
   agregarUsuario(usuarioNuevo)
 
   return true;
@@ -91,15 +102,24 @@ function validarFormulario(){
 //añadir el usuario y sus datos al local storage
 function agregarUsuario(usuario){
   
-  let nuevoUsuario = JSON.stringify(usuario)
+  //Realiza el post a la tabla de producto
+  var usuarioJson = JSON.stringify(usuario);
+  console.log(usuarioJson);
+  //const url = new URL("http://localhost:8080/productos/add");
+  fetch("http://localhost:8080/users/add", {
+    //Genera el producto en la base de datos (nombre_producto,categoria,descripcion y precio)
+    method: "POST",
+    body: usuarioJson,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {window.alert("El usuario se registro con exito")})
+    .catch((error) => {
+      console.error("error", error);
+    });
 
-  if(localStorage.getItem(usuario.correo) == null){
-    localStorage.setItem(usuario.correo, nuevoUsuario)
-    alert('Registro exitoso')
-    location.reload()
-  }else{
-    alert('el usuario ya existe')
-  }
 }
 
 
@@ -154,5 +174,7 @@ var crypt = {
     return decipher;
   }
 }
+
+
 
 
