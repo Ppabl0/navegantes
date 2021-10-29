@@ -143,6 +143,8 @@ class ImagenProducto {
 
 //selecionar el tag table para poderlo modificar
 let tabla = document.getElementsByClassName("tablaProductos")[0];
+let imagen = localStorage.get('imagen',hola);
+console.log(hola);
 
 function anadirProducto() {
   //primero validar la informacion
@@ -160,6 +162,7 @@ function anadirProducto() {
     document.getElementById("categoriaProducto").value
   );
   producto.descripcion = document.getElementById("descripcion").value;
+  producto.imagen = imagen;
   tallas.talla_ch = Number(document.getElementById("tallaChica").value);
   tallas.talla_m = Number(document.getElementById("tallaMediana").value);
   tallas.talla_g = Number(document.getElementById("tallaGrande").value);
@@ -248,6 +251,7 @@ function modificarProducto(id) {
      
       document.getElementById("precioProducto").value = res.precio;
       document.getElementById("descripcion").value = res.descripcion;
+      
       if(res.id_categoria == 1){
         document.getElementById("categoriaProducto").value = 1;}
         else if(res.id_categoria == 2){
