@@ -91,7 +91,7 @@ function validarFormulario(){
   usuarioNuevo.nombre=nombreForm;
   usuarioNuevo.correo=correoForm;
   usuarioNuevo.telefono=telefonoForm;
-  usuarioNuevo.contrasena=contraEncriptada;
+  usuarioNuevo.contrasena=contrasena;
   usuarioNuevo.compras=0;
   usuarioNuevo.direccion=document.getElementById('direccion').value;
   agregarUsuario(usuarioNuevo)
@@ -132,26 +132,53 @@ function validarInicio(){
     alert('Ingresa un correo valido');
     return;
   }
+  let contrasena = document.getElementById('password').value
+  let contraEncriptada = crypt.encrypt(contrasena);
+  const login={
+    username:correo,
+    password:contrasena
+  }
+
+  
+  loginJson=JSON.stringify(login)
+  console.log(loginJson)
+  fetch("http://localhost:8080/users/verificacion", {
+    //Genera la consulta del token
+    method: "POST",
+    body: loginJson,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      if(sessionStorage.getItem("Token") == null){
+        sessionStorage.setItem("Token",'')
+      }
+      sessionStorage.setItem("Token","Bearer "+res.jwt)
+      sessionStorage.setItem("User",correo)
+    })
+    .catch((error) => {alert("Usuario no valido")})
 
   //validar que exista el usuario y su contraseña
-  let contra = document.getElementById('password').value
-  let registro = localStorage.getItem(correo)
+  // let contra = document.getElementById('password').value
+  // let registro = localStorage.getItem(correo)
 
-  if(registro == null){
-    alert('no se encontro ningun usuario con el correo: '+ correo)
-  }else {
-    let usuario = JSON.parse(registro)
-    //desencriptar contraseña del usuario
-    let desencriptada = crypt.decrypt(usuario.contrasena)
-    if(desencriptada == contra){
-      alert('Inicio de sesion existoso')
-      document.getElementById('inicio').reset()
-      window.location.replace("/html/PaginaPrincipal.html");
-    }else {
-      alert('La contraseña es incorrecta')
-    }
+  // if(registro == null){
+  //   alert('no se encontro ningun usuario con el correo: '+ correo)
+  // }else {
+  //   let usuario = JSON.parse(registro)
+  //   //desencriptar contraseña del usuario
+  //   let desencriptada = crypt.decrypt(usuario.contrasena)
+  //   if(desencriptada == contra){
+  //     alert('Inicio de sesion existoso')
+  //     document.getElementById('inicio').reset()
+  //     window.location.replace("/html/PaginaPrincipal.html");
+  //   }else {
+  //     alert('La contraseña es incorrecta')
+  //   }
     
-  }
+  // }
 }
 
 //declaracion de las funciones pa encriptar la contraseña

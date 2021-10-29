@@ -132,21 +132,23 @@ function CargarItems() {
   // }
   let products_data;
   const url = new URL("http://localhost:8080/productos/all");
+  token = sessionStorage.getItem("Token");
   let loading = true;
-  fetch(url)
+  fetch(url,{method:'GET'})//, headers:{'Authorization':token}
     .then((data) => data.json())
     .then((data) => {
       for (let i = 0; i < data.length; i++) {
         console.log(data[i])
         item = data[i];
         const itemHTML = `
+            
             <div class = "product col-10 col-sm-4 col-md-3.5 col-lg-3" >
             <div class = "product-content">
                 <div class = "product-img">
-                  <img src = '/imagenes/UNAPIEZA2.jpg' alt = "product image" height="250px" >
+                  <img href="#producto/${item.id_producto}_${item.nombre_producto}" src='/imagenes/UNAPIEZA2.jpg' alt="product image" onclick='precarga(${item.id_producto})' height="250px" >
                 </div>
                 <div class = "product-btns">
-                  <button type = "button" class = "btn-cart"> añadir a carrito
+                  <button type = "button" class = "btn-cart" onclick='agregarCarrito(${item.id_producto})'> añadir a carrito
                   <span><i class = "fas fa-plus"></i></span>
                   </button>
                   <button type = "button" class = "btn-buy"> comprar ahora
@@ -166,13 +168,13 @@ function CargarItems() {
                   <span><i class = "far fa-star"></i></span>
                 </div>
               </div>
-              <a href = "#" class = "product-name">${item.nombre_producto}</a>
+              <a href="#producto/${item.id_producto}_${item.nombre_producto}" onclick="precarga(${item.id_producto})" class = "product-name">${item.nombre_producto}</a>
               <p class = "product-price">$${item.precio}</p>
             </div>
             </div>`;
 
         const itemsContainer = document.getElementById("listaBikinis");
-        itemsContainer.innerHTML += itemHTML;
+        itemsContainer.innerHTML += itemHTML + `<script src="/js/ventaProducto.js"></script>`;
         //addItem(data[i]);
       }
     })
