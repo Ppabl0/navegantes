@@ -94,7 +94,8 @@ function validarFormulario(){
   usuarioNuevo.contrasena=contrasena;
   usuarioNuevo.compras=0;
   usuarioNuevo.direccion=document.getElementById('direccion').value;
-  agregarUsuario(usuarioNuevo)
+  agregarUsuario(usuarioNuevo);
+  location.reload(true)
 
   return true;
 }
@@ -115,7 +116,7 @@ function agregarUsuario(usuario){
     },
   })
     .then((res) => res.json())
-    .then((data) => {window.alert("El usuario se registro con exito")})
+    .then((data) => {window.alert("El usuario se registro con exito"); location.reload(true)})
     .catch((error) => {
       console.error("error", error);
     });
