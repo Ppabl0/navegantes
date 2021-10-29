@@ -172,6 +172,20 @@
 	<script>
 		CargarItems();
 	</script>
+	<script src="/js/ventaProducto.js"></script>
+<script>
+	function generarMostrarProducto(id) {
+		debugger
+		const itemsContainer = document.getElementById("listaBikinis");
+		itemsContainer.innerHTML = ""
+		let $scriptuno=document.createElement("script");
+		let $scriptdos=document.createElement("script");
+		$scriptuno.setAttribute("src","/js/ventaProducto.js")
+		$scriptuno.appendChild(document.createTextNode(`mostrarProducto(${id})`))
+    itemsContainer.append($scriptuno)
+		itemsContainer.append($scriptdos)
+}
+</script>
 
 </body>
 </html>
