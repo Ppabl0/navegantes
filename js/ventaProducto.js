@@ -280,7 +280,7 @@ function mostrarCarrito(){
               </td>
               <td class="text-right d-none d-md-block">
               <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip"> <i class="fa fa-heart"></i></a>
-              <a href="" class="btn btn-light" onclick='precargaEliminar(${producto_fetch.id_producto})'> Quitar</a>
+              <button type="submit" class="btn" style="background-color: #f700cd; color:white;" onclick='precargaEliminar(${producto_fetch.id_producto})'>Eliminar</button>
               </td>
           </tr>
                   `;
@@ -297,19 +297,19 @@ function mostrarCarrito(){
 
 function eliminarDelCarrito(codigo_eliminar){
   //console.log("se elimino producto")
-  debugger
   fetch(`http://localhost:8080/producto_venta/eliminar/${codigo_eliminar}`, {
-    method: "DELETE",
+  method: "DELETE",
+})
+  .then((res) => {res.json})
+  .then((res) => {  console.log("El producto se ha eliminado",res);
   })
-    .then((res) => {debugger; res.json})
-    .then((res) => {  console.log("El producto se ha eliminado",res);
-    })
-    .catch((error) => {
-      console.error("error", error);
-    });
+  .catch((error) => {
+    console.error("error", error);
+  });
 }
+ 
 
 function precargaEliminar(codigo_eliminar){
-eliminarDelCarrito(codigo_eliminar)
+eliminarDelCarrito(codigo_eliminar);
 }
 
