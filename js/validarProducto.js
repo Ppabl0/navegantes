@@ -161,15 +161,21 @@ function anadirProducto() {
   producto.id_categoria = Number(
     document.getElementById("categoriaProducto").value
   );
-  producto.descripcion = document.getElementById("descripcion").value;
+
+  let imagen = localStorage.getItem("ejemplo");
   producto.imagen = imagen;
+
+  producto.descripcion = document.getElementById("descripcion").value;
+  
+
+
   tallas.talla_ch = Number(document.getElementById("tallaChica").value);
   tallas.talla_m = Number(document.getElementById("tallaMediana").value);
   tallas.talla_g = Number(document.getElementById("tallaGrande").value);
 
   //Realiza el post a la tabla de producto
   var productoJson = JSON.stringify(producto);
-  console.log(producto);
+  console.log(productoJson);
   //const url = new URL("http://localhost:8080/productos/add");
   fetch("http://localhost:8080/productos/add", {
     //Genera el producto en la base de datos (nombre_producto,categoria,descripcion y precio)

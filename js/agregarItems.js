@@ -101,10 +101,10 @@ function agregarItemLocalStorage(validation) {
       document.getElementById("imagenProducto").value,
       document.getElementById("precioProducto").value,
       document.getElementById("categoriaProducto").value,
-      document.getElementById("tallaChica").checked,
-      document.getElementById("tallaMediana").checked,
-      document.getElementById("tallaGrande").checked,
-      document.getElementById("tallaExtraGrande").checked,
+      document.getElementById("tallaChica").value,
+      document.getElementById("tallaMediana").value,
+      document.getElementById("tallaGrande").value,
+      document.getElementById("tallaExtraGrande").value,
       document.getElementById("cantidadPiezas").value
     );
 
