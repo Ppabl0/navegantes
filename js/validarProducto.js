@@ -426,6 +426,7 @@ function tablaRegistros() {
         let columnaEliminar = document.createElement("td");
         let btnEliminar = document.createElement("button");
         btnEliminar.setAttribute("value",producto.id_producto);
+        btnEliminar.setAttribute("class",'btn btn-danger');
         let eliminar_p = document.createTextNode("Eliminar");
         btnEliminar.appendChild(eliminar_p)
         btnEliminar.setAttribute("onclick","eliminarProducto(this.value)")
@@ -435,6 +436,7 @@ function tablaRegistros() {
         let columnaModificar = document.createElement("td");
         let btnModificar = document.createElement("button");
         btnModificar.setAttribute("value",producto.id_producto);
+        btnModificar.setAttribute("class",'btn btn-warning');
         let modificar_p = document.createTextNode("Modificar");
         btnModificar.appendChild(modificar_p)
         btnModificar.setAttribute("onclick","modificarProducto(this.value)")
@@ -446,7 +448,6 @@ function tablaRegistros() {
         ultimaLinea.append(columnaID);
         ultimaLinea.append(columnaNombre); //nombre tipo tallas precio cantidad
         ultimaLinea.append(columnaDescripcion);
-        ultimaLinea.append(columnaCategoria);
         //ultimaLinea.append(columnaTallas);
         ultimaLinea.append(columnaPrecio);
         //debugger
