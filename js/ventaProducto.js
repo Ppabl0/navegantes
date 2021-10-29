@@ -221,14 +221,6 @@ function precarga(codigo){
 
 
 
-
-
-
-
-
-
-
-
 function mostrarCarrito(){
 
   const itemsContainer = document.getElementById("carrito");
@@ -265,7 +257,7 @@ function mostrarCarrito(){
         `   <tr>
               <td>
                   <figure class="itemside align-items-center">
-                      <div class="aside"><img src="/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D1P4.jpg" class="img-sm"></div>
+                      <div class="aside"><img src="/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D1P4.jpg" class="img-sm" height=250px></div>
                       <figcaption class="info">
                           <a href="#" class="title text-dark"> ${producto_fetch.nombre_producto}</a>
                           <p class="text-muted small"> Traje una pieza <br>$${producto_fetch.precio}</p>
@@ -303,23 +295,21 @@ function mostrarCarrito(){
 }
 
 
-function eliminarDelCarrito(codigo){
+function eliminarDelCarrito(codigo_eliminar){
   //console.log("se elimino producto")
   debugger
-  fetch(`http://localhost:8080/producto_venta/eliminar/${codigo}`, {
+  fetch(`http://localhost:8080/producto_venta/eliminar/${codigo_eliminar}`, {
     method: "DELETE",
   })
-    .then((res) => res.json)
-    .then((res) => {
-      debugger
-      console.log("El producto se ha eliminado",res);
+    .then((res) => {debugger; res.json})
+    .then((res) => {  console.log("El producto se ha eliminado",res);
     })
     .catch((error) => {
       console.error("error", error);
     });
 }
 
-function precargaEliminar(id){
-eliminarDelCarrito(id)
+function precargaEliminar(codigo_eliminar){
+eliminarDelCarrito(codigo_eliminar)
 }
 
