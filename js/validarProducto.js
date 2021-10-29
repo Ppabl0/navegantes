@@ -163,7 +163,7 @@ function anadirProducto() {
   );
 
   let imagen = localStorage.getItem("ejemplo");
-  producto.imagen = imagen;
+  producto.imagen = "imagen";
 
   producto.descripcion = document.getElementById("descripcion").value;
   
@@ -202,6 +202,7 @@ function anadirProducto() {
         .then((res) => res.json())
         .then((talla) => {
           console.log("Tallas",talla);
+          location.reload(true);
         })
         .catch((error) => {
           console.error("error", error);
@@ -236,6 +237,7 @@ function eliminarProducto(id) {
     .then((res) => res.json)
     .then((res) => {
       console.log("El producto se ha eliminado");
+      location.reload(true)
     })
     .catch((error) => {
       console.error("error", error);
