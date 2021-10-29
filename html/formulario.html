@@ -144,7 +144,7 @@
 <div class="row justify-content-md-center" id="botonAgregar">
   <div class="col-md-auto">
     <br/>
-    <button type="submit" class="btn" style="background-color: #f700cd; color:white;" id="botonReg" onclick="document.getElementById('alert').innerHTML='';var checkChica = document.getElementById('tallaChica').checked; var checkMediana = document.getElementById('tallaMediana').checked; var checkGrande = document.getElementById('tallaGrande').checked; var lista = validacionDeProducto(document.getElementById('nombreProducto').value,checkChica,checkMediana,checkGrande,document.getElementById('precioProducto').value,document.getElementById('descripcion').value); ejecutaAlerta(lista); anadirProducto()">Registar</button> <!--agregarItemLocalStorage(retorno);-->
+    <button type="submit" class="btn" style="background-color: #f700cd; color:white;" id="botonReg" onclick="document.getElementById('alert').innerHTML='';var checkChica = document.getElementById('tallaChica').value; var checkMediana = document.getElementById('tallaMediana').value; var checkGrande = document.getElementById('tallaGrande').value; var lista = validacionDeProducto(document.getElementById('nombreProducto').value,checkChica,checkMediana,checkGrande,document.getElementById('precioProducto').value,document.getElementById('descripcion').value); ejecutaAlerta(lista); anadirProducto()">Registar</button> <!--agregarItemLocalStorage(retorno);-->
     <button type="submit" class="btn" style="background-color: #f700cd; color:white;"  hidden="hidden" id ="botonMod" onclick="actualizarUp();">Modificar</button>
 
   </div>
