@@ -116,7 +116,7 @@ function mostrarProducto(codigo) {
       <aside class="col-md-6">
   <article class="gallery-wrap"> 
     <div class="img-big-wrap">
-       <a href="#"><img src="/imagenes/CURVY 1.jpg"></a>
+       <a href="#"><img src="${producto_fetch.imagen}"></a>
     </div> 	<!--img-big-wrap.// -->
   
     <!-- <div class="thumbs-wrap"> galeria miniatura

@@ -62,14 +62,14 @@ function CargarItemsByCategory(category){
       for (let i = 0; i < data.length; i++) {
         console.log(data[i])
         console.log(category)
-        debugger
+        
         if(data[i].id_categoria == category){
         item = data[i];
         const itemHTML = `
             <div class = "product col-10 col-sm-4 col-md-3.5 col-lg-3" >
             <div class = "product-content">
                 <div class = "product-img">
-                  <img src = '/imagenes/UNAPIEZA2.jpg' alt = "product image" height="250px" >
+                  <img src = '${item.imagen}' alt = "product image" height="250px" >
                 </div>
                 <div class = "product-btns">
                   <button type = "button" class = "btn-cart"> añadir a carrito
