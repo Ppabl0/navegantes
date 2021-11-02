@@ -301,7 +301,7 @@ function eliminarDelCarrito(codigo_eliminar){
   method: "DELETE",
 })
   .then((res) => {res.json})
-  .then((res) => {  console.log("El producto se ha eliminado",res);
+  .then((res) => {  console.log("El producto se ha eliminado",res);location.reload(true);
   })
   .catch((error) => {
     console.error("error", error);
