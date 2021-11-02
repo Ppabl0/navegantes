@@ -2,6 +2,7 @@
 
 body{
   background-image: url(/imagenes/FONDO4.jpg);
+  overflow-x: hidden;
 }
 .nosotros {
   background: url("");
@@ -97,11 +98,12 @@ h5.card-title {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  margin-bottom: -150px;
 }
 
 .tablaProductos td, th {
   border: 1px solid #dddddd;
-  text-align: left;
+  text-align: center;
   padding: 8px;
 }
 

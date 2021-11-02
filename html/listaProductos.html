@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link rel='stylesheet' href='/css/estilos.css'>
 	<link rel="stylesheet" href="/css/ofertas.css">
+	<link rel="stylesheet" href="/css/mostrarProducto.css">
 	<title>Lista de productos</title>
 </head>
 <body>
@@ -48,8 +49,11 @@
             <li class="nav-item">
               <a class="nav-link" href="login.html">Iniciar Sesión</a>
             </li>
-	    <li class="nav-item">
-              <a class="nav-link" href="CarritoPruebas.html">Compras</a>
+						<li class="nav-item">
+              <a class="nav-link" href="carrito.html">Carrito</a>
+            </li>
+						<li class="nav-item">
+              <a class="nav-link" href="formulario.html">Formulario</a>
             </li>
 					</ul>
 				  </div>
@@ -96,18 +100,18 @@
 
 					<a id="#Todas_categorias" class="nav-link navNegro" href="#" onclick="CargarItems()">Todas las categorias</a>
 
-					<a id="#Dama_una_pieza" class="nav-link navNegro" href="#Dama_una_pieza" onclick="CargarItemsByCategory('Dama una pieza')">Dama una pieza</a>
+					<a id="#Dama_una_pieza" class="nav-link navNegro" href="#Dama_una_pieza" onclick="CargarItemsByCategory(1)">Dama una pieza</a>
 
-					<a id="#Dama_dos_piezas" class="nav-link navNegro" href="#Dama_dos_piezas" onclick="CargarItemsByCategory('Dama dos piezas')">Dama dos piezas</a>
+					<a id="#Dama_dos_piezas" class="nav-link navNegro" href="#Dama_dos_piezas" onclick="CargarItemsByCategory(2)">Dama dos piezas</a>
 
-					<a id="#Dama_trikini" class="nav-link navNegro" href="#Dama_trikini" onclick="CargarItemsByCategory('Dama trikini')">Dama trikini</a>
+					<a id="#Dama_trikini" class="nav-link navNegro" href="#Dama_trikini" onclick="CargarItemsByCategory(3)">Dama trikini</a>
 
 
-					<a id="#Dama_curvy" class="nav-link navNegro" href="#Dama_curvy" onclick="CargarItemsByCategory('Dama curvy')">Dama curvy</a>
+					<a id="#Dama_curvy" class="nav-link navNegro" href="#Dama_curvy" onclick="CargarItemsByCategory(4)">Dama curvy</a>
 
-					<a id="#Caballero" class="nav-link navNegro" href="#Caballero" onclick="CargarItemsByCategory('Caballero')">Caballero </a>
+					<a id="#Caballero" class="nav-link navNegro" href="#Caballero" onclick="CargarItemsByCategory(5)">Caballero </a>
 
-					<a id="#Caballero_curvy" class="nav-link navNegro" href="#Caballero_curvy" onclick="CargarItemsByCategory('Caballero curvy')">Caballero curvy</a>
+					<a id="#Caballero_curvy" class="nav-link navNegro" href="#Caballero_curvy" onclick="CargarItemsByCategory(6)">Caballero curvy</a>
 				</nav>
 			</div>
 		</aside>
@@ -173,10 +177,22 @@
 	<script src="/js/agregarItems.js"></script>
 	<script src="/js/cargarItems.js"></script>
 	<script>
-		GuardarItemsLocalStorage();
 		CargarItems();
-		GuardarItemsLocalStorage();
 	</script>
+	<script src="/js/ventaProducto.js"></script>
+<script>
+	function generarMostrarProducto(id) {
+		debugger
+		const itemsContainer = document.getElementById("listaBikinis");
+		itemsContainer.innerHTML = ""
+		let $scriptuno=document.createElement("script");
+		let $scriptdos=document.createElement("script");
+		$scriptuno.setAttribute("src","/js/ventaProducto.js")
+		$scriptuno.appendChild(document.createTextNode(`mostrarProducto(${id})`))
+    itemsContainer.append($scriptuno)
+		itemsContainer.append($scriptdos)
+}
+</script>
 
 </body>
 </html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compras</title>
+    <!-- bootstrap style sheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+
+<body>
+
+    <!-- BARRA DE NAVEGACION BOOTSTRAP -->
+    <header class="sticky-top">
+        <div class="sticky-xl-top" style="position: sticky;"></div>
+        <div class="header">
+            <div class="menu-bar">
+                <nav class="navbar navbar-expand-lg navbar-light " style="padding-top: 0px; padding-bottom: 0px;">
+                    <div class="container-fluid">
+                        <!-- <a class="navbar-brand" href="#">Happy swimwear</a> -->
+                        <a class="navbar-brand" href="#" style="padding-top: 0px; padding-bottom: 0px;"><img
+                                src="/imagenes/logoA.png" style="margin-top: 0px; padding-top: 5px;" alt=""></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page"
+                                        href="PaginaPrincipal.html">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="listaProductos.html">Productos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Ofertas.html">Ofertas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Aboutus.html">Nosotros</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Contacto.html">Contacto </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="login.html">Iniciar Sesión</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Carrito.html">Compras</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="formulario.html">Formulario</a>
+                                </li>
+                                <i class="feather icon-star"></i> <i class="feather icon-facebook"></i>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    </head>
+
+    <body>
+        <header class="section-header">
+
+        </header>
+
+        <section class="section-content padding-y">
+            <div class="container">
+                <br>
+                <header class="section-heading">
+                    <center>
+                        <h2 class="section-title"> Mis compras </h2>
+                    </center>
+                </header><!-- sect-heading -->
+                <br>
+                <div class="row">
+                    <aside class="col-lg-9">
+                        <div class="card">
+
+                            <div class="table-responsive">
+
+                                <table class="table table-borderless table-shopping-cart">
+                                    <thead class="text-muted">
+                                        <tr class="small text-uppercase">
+                                            <th scope="col">Producto</th>
+                                            <th scope="col" width="120">Cantidad</th>
+                                            <th scope="col" width="120">Precio</th>
+                                            <th scope="col" class="text-right d-none d-md-block" width="200"> </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="carrito">
+                                        <!-- <tr>
+                                            <td>
+                                                <figure class="itemside align-items-center">
+                                                    <div class="aside"><img
+                                                            src="/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D1P4.jpg"
+                                                            class="img-sm"></div>
+                                                    <figcaption class="info">
+                                                        <a href="#" class="title text-dark"> Verano Flores de línea</a>
+                                                        <p class="text-muted small"> Traje una pieza <br> 160</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </td>
+                                            <td>
+                                                <select class="form-control">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <div class="price-wrap">
+                                                    <var class="price">$160.00</var>
+                                                    <small class="text-muted"> $160.00 cada uno </small>
+                                                </div> price-wrap
+                                            </td>
+                                            <td class="text-right d-none d-md-block">
+                                                <a data-original-title="Save to Wishlist" title="" href=""
+                                                    class="btn btn-light" data-toggle="tooltip"> <i
+                                                        class="fa fa-heart"></i></a>
+                                                <a href="" class="btn btn-light"> Quitar</a>
+                                            </td>
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+
+                            </div> <!-- table-responsive.// -->
+
+                            <div class="card-body border-top">
+                                <center>
+                                    <p class="icontext"><i class="icon text-success fa fa-truck"></i> Entrega en una
+                                        semana </p>
+                                </center>
+                            </div> <!-- card-body.// -->
+
+                        </div> <!-- card.// -->
+
+                    </aside> <!-- col.// -->
+                    <aside class="col-lg-3">
+
+                        <div class="card mb-3">
+                            <div class="card-body">
+
+
+                                <!-- PREGUNTAR SI DEJAMOS CUPON-->
+                                <form>
+                                    <div class="form-group">
+                                        <label> Ingresa tu cupon </label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="" placeholder=" Codigo Cupon">
+                                            <span class="input-group-append">
+                                                <button class="btn btn-primary">Aplicar </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div> <!-- card-body.// -->
+                        </div> <!-- card.// -->
+
+                        <div class="card">
+                            <div class="card-body">
+                                <dl class="dlist-align">
+                                    <dt> Precio Total </dt>
+                                    <dd class="text-right"> ??? </dd>
+                                </dl>
+                                <dl class="dlist-align">
+                                    <dt>Descuento:</dt>
+                                    <dd class="text-right text-danger">- $10.00</dd>
+                                </dl>
+                                <dl class="dlist-align">
+                                    <dt>Total:</dt>
+                                    <dd class="text-right text-dark b"><strong>$59.97</strong></dd>
+                                </dl>
+                                <hr>
+
+                                <a href="#" class="btn btn-primary btn-block"> Comprar </a>
+                                <a href="#" class="btn btn-light btn-block">Continua comprando</a>
+                            </div> <!-- card-body.// -->
+                        </div> <!-- card.// -->
+
+                    </aside> <!-- col.// -->
+                </div> <!-- row.// -->
+            </div> <!-- container .//  -->
+        </section>
+        <!-- ========================= SECTION CONTENT END// ========================= -->
+
+        <script src="/js/ventaProducto.js"></script>
+        <script>mostrarCarrito();</script>
+    </body>
+
+</html>

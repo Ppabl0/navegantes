@@ -1,0 +1,97 @@
+h2.title{
+  font-size: 3em;
+}
+
+div.price{
+  padding-left: 30px;
+  margin: auto;
+}
+
+p.description{
+  padding: 15px;
+}
+
+dl.category{
+  padding-left: 15px;
+}
+div.form-cantidad{
+  display:flex;
+  flex-direction: row;
+
+}
+
+input.cantidad{
+  width: 50px;
+}
+
+.btn-cantidad{
+  border: 1px solid gainsboro;
+}
+
+.btn-cantidad:hover{
+  background-color: gainsboro;
+  border:1px solid rgb(95, 95, 95)
+}
+
+.btn-comprar{
+  padding-left: 30px;
+  background-color:#f700cd; 
+  color: white;;
+}
+
+.btn-comprar:hover{
+  color:white;
+  background-color:#bb009c; 
+}
+
+
+.gallery-wrap .img-big-wrap {
+  margin-bottom: 10px;
+  border-radius: 0.37rem;
+  overflow: hidden;
+  background-color: #fff;
+}
+.gallery-wrap .img-big-wrap a {
+  text-align: center;
+  display: block;
+}
+.gallery-wrap .img-big-wrap img {
+  height: 450px;
+  width: auto;
+  display: inline-block;
+}
+.gallery-wrap .thumbs-wrap {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.gallery-wrap .thumbs-wrap .item-thumb {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin: 3px;
+  display: inline-block;
+  overflow: hidden;
+}
+.gallery-wrap .thumbs-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 4px;
+
+}
+.gallery-wrap .thumbs-wrap img:hover {
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
+
+}
+
+.item-option-select {
+  margin-bottom: 1rem;
+  display: inline-block;
+  margin-right: 15px;
+}
+.item-option-select .btn {
+  min-width: 80px;
+}

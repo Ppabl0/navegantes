@@ -8,6 +8,9 @@
     <!-- bootstrap style sheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/estilos.css">
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"> </script>
+    
 </head>
 
 <body>
@@ -44,8 +47,8 @@
             <li class="nav-item">
               <a class="nav-link" href="login.html">Iniciar Sesión</a>
             </li>
-	     <li class="nav-item">
-              <a class="nav-link" href="CarritoPruebas.html">Compras</a>
+            <li class="nav-item">
+              <a class="nav-link" href="carrito.html">Carrito</a>
             </li>
 					</ul>
 				  </div>
@@ -82,12 +85,12 @@
             <div class="form-group">
               <label for="tipo">Tipo de traje de baño</label>
               <select class="form-select" aria-label="Default select example" id="categoriaProducto" required>
-                <option value="Dama una pieza">Dama una pieza</option>
-                <option value="Dama dos piezas">Dama dos piezas</option>
-                <option value="Dama trikini">Dama trikini</option>
-                <option value="Dama curvy">Dama curvy</option>
-                <option value="Caballero">Caballero</option>
-                <option value="Caballero curvy">Caballero curvy</option>
+                <option value="1">Dama una pieza</option>
+                <option value="2">Dama dos piezas</option>
+                <option value="3">Dama trikini</option>
+                <option value="4">Dama curvy</option>
+                <option value="5">Caballero</option>
+                <option value="6">Caballero curvy</option>
               </select>
             </div>
             <br/>
@@ -97,20 +100,16 @@
             </div>
             <br/>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" value="chica" id="tallaChica" >
+              <input class="" type="number" value="chica" id="tallaChica" min=0 >
               <label class="form-check-label" for="inlineCheckbox1">Chica</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox"  value="mediana" id="tallaMediana">
+              <input class="" type="number"  value="mediana" id="tallaMediana" min=0>
               <label class="form-check-label" for="inlineCheckbox2">Mediana</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox"  value="grande" id="tallaGrande">
+              <input class="" type="number"  value="grande" id="tallaGrande" min=0>
               <label class="form-check-label" for="inlineCheckbox2">Grande</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" value="extraGrande" id="tallaExtraGrande">
-              <label class="form-check-label" for="inlineCheckbox2">Extra grande</label>
             </div>
             <br/>
             <br/>
@@ -120,8 +119,8 @@
             </div>
             <br/>
             <div class="form-group">
-              <label for="password">Cantidad de piezas</label>
-              <input class="form-control" type="text" placeholder="10" aria-label="default input example" id="cantidadPiezas" required>
+              <label for="password">Descripción</label>
+              <input class="form-control" type="text" placeholder="Breve descripcion del producto" aria-label="default input example" id="descripcion" required>
             </div>
             <br/>
           </div>
@@ -130,26 +129,48 @@
     </div>
   </div>
 </div>
+<script>
+  $("#imagenProducto").on("change",function(){
+    var imagen = $(this)[0].files[0];
+    var fileReader = new FileReader();
+    fileReader.readAsDataURL(imagen)
+     fileReader.onload = function(){
+      var hola = fileReader.result;
+      localStorage.setItem('ejemplo', hola);
+      console.log(hola);  
+     };
+  });
+</script>
 
 
-<div class="row justify-content-md-center">
+
+<div class="row justify-content-md-center" id="botonAgregar">
   <div class="col-md-auto">
     <br/>
-    <button type="submit" class="btn" style="background-color: #f700cd; color:white;" onclick="document.getElementById('alert').innerHTML='';var checkChica = document.getElementById('tallaChica').checked; var checkMediana = document.getElementById('tallaMediana').checked; var checkGrande = document.getElementById('tallaGrande').checked; var checkExtraGrande = document.getElementById('tallaExtraGrande').checked; 
-      var lista = validacionDeProducto(document.getElementById('nombreProducto').value,checkChica,checkMediana,checkGrande,checkExtraGrande,document.getElementById('precioProducto').value,document.getElementById('cantidadPiezas').value); ejecutaAlerta(lista); anadirProducto()">Registar</button> <!--agregarItemLocalStorage(retorno);-->
+    <button type="submit" class="btn" style="background-color: #f700cd; color:white;" id="botonReg" onclick="document.getElementById('alert').innerHTML='';var checkChica = document.getElementById('tallaChica').value; var checkMediana = document.getElementById('tallaMediana').value; var checkGrande = document.getElementById('tallaGrande').value; var lista = validacionDeProducto(document.getElementById('nombreProducto').value,checkChica,checkMediana,checkGrande,document.getElementById('precioProducto').value,document.getElementById('descripcion').value); ejecutaAlerta(lista); anadirProducto()">Registar</button> <!--agregarItemLocalStorage(retorno);-->
+    <button type="submit" class="btn" style="background-color: #f700cd; color:white;"  hidden="hidden" id ="botonMod" onclick="actualizarUp();">Modificar</button>
+
   </div>
 </div>
 
 <!-- FIN FORMULARIO -->
 
 <!-- TABLA DONDE SE MUESTRA PRODUCTOS -->
-<table class="tablaProductos" style="margin-top: 100px;">
+<table class="tablaProductos" style="margin-top: 100px; text-align: center;">
   <tr>
+    <th>ID</th>
     <th>Nombre</th>
-    <th>Categoria</th>
-    <th>Tallas</th>
-    <th>Precios</th>
-    <th>Cantidad</th>
+    <th>Descripción</th>
+    <th>Precio</th>
+    <!-- <th>Tallas</th> -->
+    <th>Talla chica</th>
+    <th>Talla mediana</th>
+    <th>Talla grande</th>
+    <th>Categoría</th>
+    <th>Eliminar</th>
+    <th>Modificar</th>
+
+    <!-- <th>Cantidad</th> -->
   </tr>
   <!-- <tr>
     <td>Bikini</td>
@@ -184,15 +205,19 @@
   </div>
 
 
+  <input type="text" id="oculto" hidden="hidden" >
+
+
   <script src="/js/validarProducto.js"></script>
+  <script>tablaRegistros();</script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
   <script src="/js/modal.js"></script>
   <script src="/js/agregarItems.js"></script>
-  <div id="liveAlertPlaceholder"></div>
-    <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
+  <!-- <div id="liveAlertPlaceholder"></div>
+    <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button> -->
 </body>
 </html>
 
