@@ -163,7 +163,7 @@ function anadirProducto() {
   );
 
   let imagen = localStorage.getItem("ejemplo");
-  producto.imagen = "imagen";
+  producto.imagen = imagen;
 
   producto.descripcion = document.getElementById("descripcion").value;
   

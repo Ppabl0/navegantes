@@ -5,6 +5,7 @@ class Item {
     this.precio = precio;
     this.descripcion = descripcion;
     this.id_categoria = id_categoria;
+    this.imagen;
     // this.sizeCH=sizeCH;
     // this.sizeM=sizeM;
     // this.sizeG=sizeG;
@@ -145,7 +146,7 @@ function CargarItems() {
             <div class = "product col-10 col-sm-4 col-md-3.5 col-lg-3" >
             <div class = "product-content">
                 <div class = "product-img">
-                  <img href="#producto/${item.id_producto}_${item.nombre_producto}" src='/imagenes/UNAPIEZA2.jpg' alt="product image" onclick='precarga(${item.id_producto})' height="250px" >
+                  <img href="#producto/${item.id_producto}_${item.nombre_producto}" src='${item.imagen}' alt="product image" onclick='precarga(${item.id_producto})' height="250px" >
                 </div>
                 <div class = "product-btns">
                   <button type = "button" class = "btn-cart" onclick='agregarCarrito(${item.id_producto})'> añadir a carrito

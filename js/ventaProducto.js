@@ -257,7 +257,7 @@ function mostrarCarrito(){
         `   <tr>
               <td>
                   <figure class="itemside align-items-center">
-                      <div class="aside"><img src="/imagenes/IMAGENES EXTRA UNA PIEZA, DOS PIEZAS Y TRIKINI/D1P4.jpg" class="img-sm" height=250px></div>
+                      <div class="aside"><img src="${producto_fetch.imagen}" class="img-sm" height=250px></div>
                       <figcaption class="info">
                           <a href="#" class="title text-dark"> ${producto_fetch.nombre_producto}</a>
                           <p class="text-muted small"> Traje una pieza <br>$${producto_fetch.precio}</p>
